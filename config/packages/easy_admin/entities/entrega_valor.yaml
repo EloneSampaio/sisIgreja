@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+          EntregaValor:
+              class: App\Entity\EntregaValor
+              label: 'menu.entrega_valor'
+              list:
+                  title: 'menu.entrega_valor'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.entrega_valor.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+

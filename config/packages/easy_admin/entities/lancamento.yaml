@@ -1,0 +1,10 @@
+easy_admin:
+    entities:
+          Lancamento:
+              class: App\Entity\Lancamento
+              controller:   App\Controller\LancamentoController
+              label: 'menu.lancamento'
+              list:
+                  title: 'menu.lancamento'
+
+

@@ -1,0 +1,36 @@
+easy_admin:
+    entities:
+          Dizimo:
+              class: App\Entity\Dizimo
+              controller:   App\Controller\DizimoController
+              label: 'menu.dizimo'
+              list:
+                  title: 'menu.dizimo'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.dizimo.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
+                  - { property: 'entregaValores',type: 'easyadmin_autocomplete', label: 'Dia ou na liderança do(a):'}
+                  - { property: 'tipoDizimos',type: 'easyadmin_autocomplete', label: 'Tipo Dizimo:'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes', label: 'Membro'}
+                  - { property: 'entregaValores', label: 'Dia ou na liderança do(a)'}
+                  - { property: 'tipoDizimos', label: 'Tipo Dizimo:'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data Cadastro:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+

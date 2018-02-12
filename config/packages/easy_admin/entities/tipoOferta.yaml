@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+          TipoOferta:
+              class: App\Entity\TipoOferta
+              label: 'menu.tipo_oferta'
+              list:
+                  title: 'menu.tipo_oferta'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.tipo_oferta.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+

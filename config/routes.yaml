@@ -1,0 +1,20 @@
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\HomeController::index' }
+
+
+
+crente_gerar_card:
+    path: /admin/crente/card/{id}
+    defaults: { _controller: 'App\Controller\CrenteController::imprimirCardAction' }
+
+crente_card:
+    path: /admin/crente/card/
+    defaults: { _controller: 'App\Controller\CrenteController::cardAction' }
+
+lancamento_find:
+    path: /admin/crente/card/
+    defaults: { _controller: 'App\Controller\LancamentoController::listaAction' }
+
+fos_user:
+        resource: "@FOSUserBundle/Resources/config/routing/all.xml"

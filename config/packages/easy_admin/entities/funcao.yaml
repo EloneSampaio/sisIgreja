@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+          Funcao:
+              class: App\Entity\Funcao
+              label: 'menu.funcao'
+              list:
+                  title: 'menu.funcao'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.funcao.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+

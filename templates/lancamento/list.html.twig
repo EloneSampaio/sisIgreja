@@ -1,0 +1,74 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}
+
+{% set _content_title = 'Admin dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+
+{%- endblock %}
+
+{% block main %}
+
+
+    <div id="page-wrapper">
+        <div class="graphs">
+            <h3 class="blank1">Lançados</h3>
+            <form action="{{ path('lancamento_find') }}" method="get">
+
+            <div id="custom-search-input">
+                <div class="input-group col-md-6">
+                    <input type="text" class="form-control input-md" placeholder="Buscar" name="busca" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-md" type="submit">
+                           Pesquisar
+                        </button>
+                    </span>
+                </div>
+            </div>
+            </form>
+
+            <div class="xs tabls">
+
+
+                <div class="bs-example4" data-example-id="contextual-table">
+
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            {# sorting of properties based on query components #}
+                            <th>{{ knp_pagination_sortable(pagination, 'Id', 'a.id') }}</th>
+                            <th{% if pagination.isSorted('a.Descricao') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Descrição', 'a.descricao') }}</th>
+                            <th{% if pagination.isSorted('a.Tipo') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Tipo', 'a.tipo') }}</th>
+                            <th{% if pagination.isSorted('a.Valor') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Valor', 'a.valor') }}</th>
+
+                        </tr>
+                        </thead>
+
+                        {# table body #}
+                        <tbody>
+                        {% for lancamento in pagination %}
+                            <tr {% if loop.index is odd %}class="success"{% endif %}>
+                                <td>#</td>
+                                <td>{{ lancamento.descricao }}</td>
+                                <td>{{ lancamento.tipo }}</td>
+                                <td>{{ lancamento.valor }}</td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="pull-right">
+                        <h3 class="text-danger ">Total: {{ 24599999999 |number_format  }} KZ</h3>
+                    </div>
+                    {# display navigation #}
+                    <div class="navigation">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

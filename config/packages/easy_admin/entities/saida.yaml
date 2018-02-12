@@ -1,0 +1,29 @@
+easy_admin:
+    entities:
+          Saida:
+              class: App\Entity\Saida
+              label: 'menu.saida'
+              list:
+                  title: 'menu.saida'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.saida.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'valor',label: 'Valor' }
+              form:
+                  fields:
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+              show:
+                  fields:
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes', label: 'Membro'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data Cadastro:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+

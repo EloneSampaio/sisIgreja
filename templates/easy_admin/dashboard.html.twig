@@ -1,0 +1,88 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}
+
+{% set _content_title = 'Admin dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+
+{%- endblock %}
+
+{% block main %}
+
+<div id="page-wrapper">
+    <div class="graphs">
+        <div class="col_3">
+            <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="fa fa-mail-forward"></i>
+                    <div class="stats">
+                        <div class="grow">
+                            <a class="link-black" href="{{ path('easyadmin', {'entity':'Dizimo'}) }}"><p>Dizimo</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="fa fa-users"></i>
+                    <div class="stats">
+                        <div class="grow grow1">
+                            <a class="link-black" href="{{ path('easyadmin', {'entity':'Crente'}) }}"><p>Membros</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-3 widget">
+                <div class="r3_counter_box">
+                    <i class="fa fa-eye"></i>   <div class="stats">
+                        <div class="grow grow3">
+                            <a class="link-black" href="{{ path('easyadmin', {'entity':'Crente'}) }}"> <p>Lançamentos</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 widget">
+                <div class="r3_counter_box">
+                    <i class="fa fa-usd"></i>
+                    <div class="stats">
+                        <div class="grow grow2">
+                            <a class="link-black" href="{{ path('easyadmin', {'entity':'Oferta'}) }}"><p>Ofertas</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+            <div class="stats-info stats-info1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Balanço Membros</h3>
+                </div>
+                <div class="panel-body panel-body2">
+                    <ul class="list-header">
+                        <li>Total de Mulheres Batizadas<div class="text-success pull-right"><h3>{{ totalMulherBatizado }}</h3></div></li>
+                        <li>Total de Homens Batizadas<div class="text-success pull-right"><h3>{{ totalHomemBatizado }}</h3></div></li>
+                        <li>Total de Membros Batizados<div class="text-danger pull-right"><h3>{{ totalBatizado }}</h3></div></li>
+                        <li>Total de Mulheres Nao Batizadas<div class="text-success pull-right"><h3>{{ totalMulherNBatizado }}</h3></div></li>
+                        <li>Total de Homens Nao Batizadas<div class="text-success pull-right"><h3>{{ totalHomemNBatizado }}</h3></div></li>
+                        <li>Total de Membros Não Batizados<div class="text-danger pull-right"><h3>{{ totalNotBatizado }}</h3></div></li>
+
+                        <li>Total de Membros Geral(Na Igreja)<div class="text-success pull-right"><h2>{{ total }}</h2></div></li>
+
+
+                        <li >Total de Dizimistas Do Mês<div class="text-danger pull-right"><h3>10</h3></div></li>
+
+                    </ul>
+                </div>
+            </div>
+
+    </div>
+</div>
+
+        {% endblock %}
+

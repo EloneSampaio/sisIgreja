@@ -1,0 +1,38 @@
+easy_admin:
+    entities:
+          Oferta:
+              class: App\Entity\Oferta
+              controller:   App\Controller\OfertaController
+              label: 'menu.oferta'
+              list:
+                  title: 'menu.oferta'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.oferta.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
+                  - { property: 'entregaValores',type: 'easyadmin_autocomplete', label: 'Dia ou na liderança do(a):'}
+                  - { property: 'tipoOfertas',type: 'easyadmin_autocomplete', label: 'Tipo Oferta:'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+                  - { property: 'conferentes',label: 'Conferentes:',type: 'easyadmin_autocomplete' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes', label: 'Membro'}
+                  - { property: 'entregaValores', label: 'Dia ou na liderança do(a)'}
+                  - { property: 'tipoOfertas', label: 'Tipo Oferta:'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data Cadastro:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+                  - { property: 'conferentes',label: 'Conferentes:' }
+

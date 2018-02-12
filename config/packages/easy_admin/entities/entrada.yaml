@@ -1,0 +1,29 @@
+easy_admin:
+    entities:
+          Entrada:
+              class: App\Entity\Entrada
+              label: 'menu.entrada'
+              list:
+                  title: 'menu.entrada'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.entrada.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'valor',label: 'Valor' }
+              form:
+                  fields:
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+              show:
+                  fields:
+                  - { property: 'obs',label: 'Observaçao' }
+                  - { property: 'crentes', label: 'Membro'}
+                  - { property: 'valor',label: 'Valor:' }
+                  - { property: 'datePagamento',label: 'Data Cadastro:' }
+                  - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
+

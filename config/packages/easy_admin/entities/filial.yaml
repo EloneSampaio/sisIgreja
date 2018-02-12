@@ -1,0 +1,31 @@
+easy_admin:
+    entities:
+          Filial:
+              class: App\Entity\Filial
+              label: 'menu.igreja'
+              list:
+                  title: 'menu.igreja'
+                  actions:
+                      - {name: 'show', label: '', icon: 'search'}
+                      - {name: 'search', label: 'menu.funcao.pesquisar'}
+                      - {name: 'edit', label: '', icon: 'pencil'}
+                      - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+                    - { property: 'endereco',label: 'endereco' }
+                    - { property: 'telefone',label: 'telefone' }
+
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'endereco',label: 'endereco' }
+                  - { property: 'telefone',label: 'telefone' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'igreja.membro'}
+
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+                  - { property: 'endereco',label: 'endereco' }
+                  - { property: 'telefone',label: 'telefone' }
+
+

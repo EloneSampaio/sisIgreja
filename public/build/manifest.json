@@ -1,0 +1,20 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/fonts/fontawesome-webfont.eot?v=4.0.3": "/build/fonts/fontawesome-webfont.8b27bc96.eot",
+  "build/fonts/fontawesome-webfont.ttf?v=4.0.3": "/build/fonts/fontawesome-webfont.dcb26c72.ttf",
+  "build/fonts/fontawesome-webfont.woff?v=4.0.3": "/build/fonts/fontawesome-webfont.3293616e.woff",
+  "build/fonts/glyphicons-halflings-regular.eot": "/build/fonts/glyphicons-halflings-regular.f4769f9b.eot",
+  "build/fonts/glyphicons-halflings-regular.ttf": "/build/fonts/glyphicons-halflings-regular.e18bbf61.ttf",
+  "build/fonts/glyphicons-halflings-regular.woff": "/build/fonts/glyphicons-halflings-regular.fa277232.woff",
+  "build/fonts/glyphicons-halflings-regular.woff2": "/build/fonts/glyphicons-halflings-regular.448c34a5.woff2",
+  "build/images/2.png": "/build/images/2.54f0589d.png",
+  "build/images/3.jpg": "/build/images/3.aea775ae.jpg",
+  "build/images/6.png": "/build/images/6.c0a952b4.png",
+  "build/images/fontawesome-webfont.svg?v=4.0.3": "/build/images/fontawesome-webfont.0a799148.svg",
+  "build/images/glyphicons-halflings-regular.svg": "/build/images/glyphicons-halflings-regular.89889688.svg",
+  "build/images/tick.png": "/build/images/tick.020889c8.png",
+  "build/login.css": "/build/login.css",
+  "build/login.js": "/build/login.js",
+  "build/manifest.js": "/build/manifest.js"
+}

@@ -1,0 +1,72 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'pt'
+    app.name: 'SisIgreja'
+
+#    definicoes de algumas constants do sistema
+    estadoCivil:
+              Solteiro: Solteiro
+              Casado: Casado
+              Divorciado : Divorciado
+
+    grauAcademico:
+                Nenhum: Nenhum
+                Ensino Basico: Ensino Basico
+                Ensino Médio: Ensino Médio
+                Ensino Superior: Ensino Superior
+
+    genero:
+          Femenino:  Femenino
+          Masculino: Masculino
+
+    jrs_host:  localhost
+    jrs_port:   5432
+    jrs_base:      sisIgreja
+    jrs_username:  admin
+    jrs_password:  admin
+    jrs_org_id:    null
+
+
+
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        public: false       # Allows optimizing the container by removing unused services; this also means
+                            # fetching services directly from the container via $container->get() won't work.
+                            # The best practice is to be explicit about your dependencies anyway.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Migrations,Tests}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    app.subscriber:
+        class: App\EventListener\AppSubscriber
+        arguments:
+            - "@service_container"
+        tags:
+            - { name: kernel.event_subscriber }
+#    app.twig.extension:
+#            class: App\Twig\AppExtension
+#            autowire: false
+#            arguments:
+#                  - "@easyadmin.config.manager"
+#                  - "@property_accessor"
+#                  - "%kernel.debug%"
+#                  - "@security.authorization_checker"
+#            tags:
+#              - { name: twig.extension }
+

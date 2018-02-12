@@ -1,0 +1,68 @@
+easy_admin:
+    entities:
+          Crente:
+              class: App\Entity\Crente
+              controller:   App\Controller\CrenteController
+              role: ROLE_ADMIN
+              label: 'menu.membros'
+              list:
+#                  require_permission: ["ROLE_SUPER_ADMIN"]
+                  max_results: 20
+                  title: 'menu.membros'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.membros.pesquisar'}
+                        - {name: 'edit', label: '',icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash' }
+                  fields:
+                      #- { property: 'id',label: 'id' }
+                      - { property: 'nome',label: 'nome',help: 'Nome Completo' }
+                      - { property: 'idade',label: 'idade' }
+                      - { property: 'genero',label: 'genero' }
+
+                      - {property: 'batizado', label: 'Batizado'}
+                      - {property: 'dizimista', label: 'Dizimista'}
+              form:
+                  fields:
+                      - { type: 'group', css_class: 'col-sm-6', label: 'Dados Pessoas'}
+                      - { property: 'bi',label: 'N.Doc' }
+                      - { property: 'nome',label: 'nome' }
+                      - { property: 'idade',label: 'idade' }
+                      - { property: 'endereco',label: 'endereco' }
+                      - { property: 'telefone',label: 'telefone' }
+                      - { property: 'genero',type: 'choice', type_options: { expanded: false, choices: '%genero%' }, label: 'Genero' }
+
+                      - { property: 'estadoCivil',type: 'choice', type_options: { expanded: false, choices: '%estadoCivil%' }, label: 'Estado Civíl' }
+                      - { property: 'grauAcademico',label: 'Nivel Academico', type: 'choice', type_options: { expanded: false, choices: '%grauAcademico%' } }
+                      - { property: 'statusTrabalho',label: 'Trabalha' }
+                      - { property: 'profissao',label: 'Profissao' }
+                      - { type: 'group', css_class: 'col-sm-6', label: 'Dados Familiares' }
+                      - { property: 'nomeMulher',label: 'Conjugue' }
+                      - { property: 'numeroDeFilhos',label: 'Qtd de filhos' }
+                      - { type: 'group', css_class: 'col-sm-6', label: 'Dados Do Ministério'}
+                      - { property: 'batizado', label: 'Batizado'}
+                      - { property: 'dizimista', label: 'Dizimista'}
+                      - { property: 'cargos',type: 'easyadmin_autocomplete', label: 'Cargo'}
+                      - { property: 'filias',type: 'easyadmin_autocomplete', label: 'Igreja'}
+                      - { property: 'funcoes',type: 'easyadmin_autocomplete', label: 'Funcao'}
+              show:
+#                  require_permission: ["ROLE_SUPER_ADMIN"]
+                  fields:
+                      - { property: 'id',label: 'id' }
+                      - { property: 'bi',label: 'N.Doc' }
+                      - { property: 'nome',label: 'nome' }
+                      - { property: 'idade',label: 'idade' }
+                      - { property: 'genero',label: 'genero' }
+
+                      - { property: 'telefone',label: 'telefone' }
+                      - { property: 'endereco',label: 'endereco' }
+                      - { property: 'estadoCivil',label: 'Estado Civíl' }
+                      - { property: 'grauAcademico',label: 'Nivel Academico' }
+                      - { property: 'statusTrabalho',label: 'Trabalha' }
+                      - { property: 'profissao',label: 'Profissao' }
+                      - { property: 'nomeMulher',label: 'Conjugue' }
+                      - { property: 'numeroDeFilhos',label: 'Qtd de filhos' }
+                      - { property: 'batizado', label: 'Batizado'}
+                      - { property: 'cargos', label: 'Cargo'}
+                      - { property: 'funcoes', label: 'Funcao'}
+                      - { property: 'filias', label: 'Igreja'}

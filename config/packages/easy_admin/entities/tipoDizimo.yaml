@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+          TipoDizimo:
+              class: App\Entity\TipoDizimo
+              label: 'menu.tipo_dizimo'
+              list:
+                  title: 'menu.tipo_dizimo'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.tipo_dizimo.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+                    - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+              show:
+                  fields:
+                  - { property: 'nome',label: 'nome' }
+

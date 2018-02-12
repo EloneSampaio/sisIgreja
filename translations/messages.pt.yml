@@ -1,0 +1,101 @@
+#nome da aplicaçao
+app.name: SisIgreja
+
+#traduçao do menu
+menu.membros:   Membros
+menu.dashboard: Tela Inicial
+menu.operacoes: Operações
+menu.cargo:   Cargos
+menu.funcao:   Funções
+menu.corista:   Coristas
+menu.igreja:   Igrejas
+menu.usuarios:   Usuarios
+menu.cadastro:   Cadastros
+menu.utilitario:   Utilitarios
+menu.documento:   Documentos
+menu.financa:   Tesouraria
+
+
+
+
+
+
+#traduçao das opçoes de crente
+menu.membros.lista:   Listar Todos
+menu.membros.adicionar: Adicionar
+menu.membros.detalhe: Ver
+menu.membros.pesquisar: Pesquisar
+menu.membros.alterar: Alterar
+menu.membros.apagar: Apagar
+menu.membro.cartao: Cartao de Membro
+menu.membros.imprimir: Cartão
+menu.membros.config: Configurar Membro
+
+
+
+#traduçao do formulario de crente
+Dados Pessoas: Dados Pessoas
+id: ID
+N.Doc: N.Doc
+nome: Nome
+idade: Idade
+endereco: Endereço
+telefone: Telefone
+Estado Civíl: Estado Civíl
+Nivel Academico: Grau Academico
+Trabalha: Trabalha?
+Profissao: Profissao
+Dados Familiares: Dados Familiares
+Conjugue: Conjugue
+Qtd de filhos: Qtd de filhos
+Dados Do Ministério: Dados Do Ministério
+Batizado: É Batizado?
+Dizimista: É Dizimista?
+Cargo: Cargo
+Igreja: Igreja
+Funcao: Função
+
+
+
+#traduçao das opçoes de Cargo
+menu.cargo.lista:   Listar Todos
+menu.cargo.adicionar: Adicionar
+menu.cargo.detalhe: Detalhes
+menu.cargo.pesquisar: Pesquisar
+menu.cargo.alterar: Alterar
+menu.cargo.apagar: Apagar
+menu.cargo.pesquisar: Pesquisar
+
+
+#traduçao das opçoes de funcao
+menu.funcao.lista:   Listar Todos
+menu.funcao.adicionar: Adicionar
+menu.funcao.detalhe: Detalhes
+menu.funcao.pesquisar: Pesquisar
+menu.funcao.alterar: Alterar
+menu.funcao.apagar: Apagar
+menu.funcao.pesquisar: Pesquisar
+
+
+#traduçao das opçoes de corista
+menu.corista.lista:   Listar Todos
+menu.corista.adicionar: Adicionar
+menu.corista.detalhe: Detalhes
+menu.corista.pesquisar: Pesquisar
+menu.corista.alterar: Alterar
+menu.corista.apagar: Apagar
+menu.corista.pesquisar: Pesquisar
+corista.membro: Membros
+
+
+
+#traduçao das opçoes de igreja
+menu.igreja.lista:   Listar Todos
+menu.igreja.adicionar: Adicionar
+menu.igreja.detalhe: Detalhes
+menu.igreja.pesquisar: Pesquisar
+menu.igreja.alterar: Alterar
+menu.igreja.apagar: Apagar
+menu.igreja.pesquisar: Pesquisar
+igreja.membro: Seleciona o Responsavel
+

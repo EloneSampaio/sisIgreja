@@ -1,0 +1,37 @@
+easy_admin:
+    entities:
+          Despesa:
+              class: App\Entity\Despesa
+              label: 'menu.despesa'
+              list:
+                  title: 'menu.despesa'
+                  max_results: 20
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.despesa.pesquisar'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+                        - {name: 'delete', label: '',icon: 'trash'}
+                  fields:
+
+                        - { property: 'dateVencimento',label: 'Vencimento' }
+                        - { property: 'datePagamento',label: 'Pagamento' }
+                        - { property: 'valor',label: 'Valor' }
+
+                        - {property: 'recebido', label: 'Pago'}
+                        - {property: 'valorTotal', label: 'Total'}
+              form:
+                  fields:
+                        - { type: 'group', css_class: 'col-sm-6', label: 'Dados da fatura',icon: 'truck'}
+                        - { property: 'docNumber',label: 'N.Doc' }
+                        - { property: 'fornecedores',label: 'Fornecedor/Empresa',type: 'easyadmin_autocomplete' }
+                        - { property: 'descricao',label: 'Descrição' }
+                        - { type: 'group', css_class: 'col-sm-6', label: 'Detalhes' }
+                        - { property: 'dateVencimento',label: 'Vencimento' }
+                        - { property: 'datePagamento',label: 'Pagamento' }
+                        - { type: 'group', css_class: 'col-sm-6', label: 'Valores Pagos' }
+                        - { property: 'valor',label: 'Valor Pago',type: 'number' }
+                        - { property: 'juros',label: 'Juros',type: 'number' }
+                        - { property: 'valorTotal',label: 'Total' ,type: 'number'}
+                        - { type: 'group', css_class: 'col-sm-6', label: '' }
+                        - { property: 'recebido',label: 'Foi Recebido?' }
+
