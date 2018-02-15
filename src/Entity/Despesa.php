@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -53,31 +52,7 @@ class Despesa
      */
     protected $valor;
 
-    /**
-     * The value rate to apply on the despesa.
-     *
-     * @var string
-     * @ORM\Column(type="decimal",nullable=true)
-     */
-    protected $desconto;
 
-
-    /**
-     * The value rate to apply on the despesa.
-     *
-     * @var string
-     * @ORM\Column(type="decimal",nullable=true)
-     */
-    protected $juros;
-
-
-    /**
-     * The value rate to apply on the despesa.
-     *
-     * @var string
-     * @ORM\Column(type="decimal")
-     */
-    protected $valorTotal;
 
 
 
@@ -200,53 +175,7 @@ class Despesa
         $this->valor = $valor;
     }
 
-    /**
-     * @return string
-     */
-    public function getDesconto()
-    {
-        return $this->desconto;
-    }
 
-    /**
-     * @param string $desconto
-     */
-    public function setDesconto( $desconto)
-    {
-        $this->desconto = $desconto;
-    }
-
-    /**
-     * @return string
-     */
-    public function getJuros()
-    {
-        return $this->juros;
-    }
-
-    /**
-     * @param string $juros
-     */
-    public function setJuros( $juros)
-    {
-        $this->juros = $juros;
-    }
-
-    /**
-     * @return string
-     */
-    public function getValorTotal()
-    {
-        return $this->valorTotal;
-    }
-
-    /**
-     * @param string $valorTotal
-     */
-    public function setValorTotal( $valorTotal)
-    {
-        $this->valorTotal = $valorTotal;
-    }
 
     /**
      * @return mixed

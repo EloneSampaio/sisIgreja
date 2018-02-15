@@ -17,11 +17,7 @@ class Dizimo
      */
     private $id;
 
-    // add your own fields
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $nome;
+
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -94,21 +90,6 @@ class Dizimo
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    /**
-     * @param mixed $nome
-     */
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
 
     /**
      * @return mixed

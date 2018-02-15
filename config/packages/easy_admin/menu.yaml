@@ -4,7 +4,7 @@ easy_admin:
     design:
       menu:
           - { label: 'menu.dashboard', route: 'index', default: true,role: ROLE_ADMIN }
-          - { label: 'menu.caixa', route: 'index', default: true,role: ROLE_SUPER_ADMIN }
+          - { label: 'menu.caixa', route: 'caixa',role: ROLE_SUPER_ADMIN }
           - label: 'menu.cadastro'
             icon: 'shopping-basket'
             role: ROLE_SUPER_ADMIN
@@ -12,23 +12,7 @@ easy_admin:
                 - { entity: 'Crente', icon: 'plus-circle', label: 'menu.membros', params: {sortField: 'id'} }
                 - { entity: 'Filial', icon: 'plus-circle', label: 'menu.igreja', params: {sortField: 'id'} }
                 - { entity: 'Fornecedor', icon: 'plus-circle', label: 'menu.fornecedor', params: {sortField: 'id'} }
-
-
-
-
-          - label: 'menu.membros.config'
-            icon: 'shopping-basket'
-            role: ROLE_SUPER_ADMIN
-            children:
-                - { entity: 'Cargo', icon: 'plus-circle', label: 'menu.cargo', }
-                - { entity: 'Funcao', icon: 'plus-circle', label: 'menu.funcao',  }
-
-          - label: 'menu.utilitario'
-            icon: 'shopping-basket'
-            role: ROLE_SUPER_ADMIN
-            children:
-                - { entity: 'Cargo', icon: 'plus-circle', label: 'menu.cargo', }
-                - { entity: 'Funcao', icon: 'plus-circle', label: 'menu.funcao',  }
+                - {label: 'menu.usuarios', entity: 'User', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
 
           - label: 'menu.documento'
             icon: 'shopping-basket'
@@ -49,7 +33,17 @@ easy_admin:
                   - { entity: 'Oferta', icon: 'plus-circle', label: 'menu.oferta', params: {action: 'list'},role: ROLE_SUPER_ADMIN}
                   - { entity: 'Entrada', icon: 'plus-circle', label: 'menu.entrada', params: {action: 'list'},role: ROLE_SUPER_ADMIN}
                   - { entity: 'Saida', icon: 'plus-circle', label: 'menu.saida', params: {action: 'list'},role: ROLE_SUPER_ADMIN}
-                  - { entity: 'Lancamento', icon: 'plus-circle', label: 'menu.lancamento', params: {action: 'lista'},role: ROLE_SUPER_ADMIN}
+                  - { entity: 'Lancamento', icon: 'plus-circle', label: 'menu.lancamento', params: {action: 'listaMenu'},role: ROLE_SUPER_ADMIN}
+
+          - { label: 'menu.relatorio', route: 'relatorio' }
+#            icon: 'shopping-basket'
+#            role: ROLE_SUPER_ADMIN
+#            children:
+#            - { entity: 'TipoPagamento', icon: 'plus-circle', label: 'menu.relatorio_membro', }
+#            - { entity: 'TipoDizimo', icon: 'plus-circle', label: 'menu.relatorio_dizimo',  }
+#            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.relatorio_oferta',  }
+#            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.relatorio_lancamento',  }
+#            - { entity: 'AuditLog', icon: 'plus-circle', label: 'menu.log' }
 
 
           - label: 'menu.financa.config'
@@ -61,29 +55,28 @@ easy_admin:
                     - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.tipo_oferta',  }
                     - { entity: 'EntregaValor', icon: 'plus-circle', label: 'menu.entrega_valor',  }
 
+          - label: 'menu.membros.config'
+            icon: 'shopping-basket'
+            role: ROLE_SUPER_ADMIN
+            children:
+                - { entity: 'Cargo', icon: 'plus-circle', label: 'menu.cargo', }
+                - { entity: 'Funcao', icon: 'plus-circle', label: 'menu.funcao',  }
+
+
           - label: 'menu.cadastro.outros'
             icon: 'shopping-basket'
             role: ROLE_ADMIN
             children:
             - { entity: 'Corista', icon: 'plus-circle', label: 'menu.corista', }
-            - { entity: 'TipoDizimo', icon: 'plus-circle', label: 'menu.agenda',  }
-            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.tipo_oferta',  }
+            - { entity: 'Agenda', icon: 'plus-circle', label: 'menu.agenda',  params: {action: 'listaMenu'}}
 
 
 
-          - label: 'menu.relatorio'
-            icon: 'shopping-basket'
-            role: ROLE_SUPER_ADMIN
-            children:
-            - { entity: 'TipoPagamento', icon: 'plus-circle', label: 'menu.relatorio_membro', }
-            - { entity: 'TipoDizimo', icon: 'plus-circle', label: 'menu.relatorio_dizimo',  }
-            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.relatorio_oferta',  }
-            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.relatorio_lancamento',  }
-            - { entity: 'TipoOferta', icon: 'plus-circle', label: 'menu.log',  }
 
 
-          - {label: 'menu.patrimonio', entity: 'User', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
-          - {label: 'menu.usuarios', entity: 'User', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
+          - {label: 'menu.patrimonio', entity: 'Patrimonio', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
+          - {label: 'menu.log', entity: 'AuditLog', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
+
           - { label: 'menu.configuracao', route: 'index', default: true,role: ROLE_SUPER_ADMIN }
 
 

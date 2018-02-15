@@ -18,11 +18,7 @@ class Oferta
      */
     private $id;
 
-    // add your own fields
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $nome;
+
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -66,9 +62,9 @@ class Oferta
      * The date of the delivery (it doesn't include the time).
      *
      * @var \DateTime
-     * @ORM\Column(type="date",nullable=true)
+     * @ORM\Column(type="date")
      */
-    protected $datePagamento = null;
+    protected $datePagamento ;
     /**
      * The value rate to apply on the despesa.
      *
@@ -101,21 +97,7 @@ class Oferta
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNome()
-    {
-        return $this->nome;
-    }
 
-    /**
-     * @param mixed $nome
-     */
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
 
     /**
      * @return mixed
@@ -171,7 +153,7 @@ class Oferta
     /**
      * @return \DateTime
      */
-    public function getDatePagamento()
+    public function getDatePagamento(): \DateTime
     {
         return $this->datePagamento;
     }

@@ -15,4 +15,15 @@ class EntradaRepository
     }
 
 
+    public function countValorPrintedForEntrada()
+    {
+        return $this->createQueryBuilder('c')
+            ->select('SUM(c.valor)')
+            ->getQuery()
+            ->useQueryCache(true)
+            ->useResultCache(true, 3600)
+            ->getSingleScalarResult();
+
+
+    }
 }

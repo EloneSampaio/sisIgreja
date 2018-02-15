@@ -12,9 +12,7 @@
 {% block main %}
 
 
-    <div id="page-wrapper">
-        <div class="graphs">
-            <h3 class="blank1">Membros</h3>
+            <h3>Membros</h3>
             <form action="{{ path('crente_card') }}" method="get">
 
             <div id="custom-search-input">
@@ -32,10 +30,7 @@
             <div class="xs tabls">
 
 
-                <div class="bs-example4" data-example-id="contextual-table">
-
-
-                    <table class="table">
+                    <table class="table table-striped">
                         <thead>
                         <tr>
                             {# sorting of properties based on query components #}
@@ -50,7 +45,7 @@
                             <tr {% if loop.index is odd %}class="success"{% endif %}>
                                 <td>#</td>
                                 <td>{{ crente.nome }}</td>
-                                <td><a class="btn btn-info" href="{{ path('crente_gerar_card', {'id': crente.id}) }}"><span class="glyphicon glyphicon-bookmark">Gerar</span></a></td>
+                                <td><a href="{{ path('crente_gerar_card', {'id': crente.id}) }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
 
                             </tr>
                         {% endfor %}
@@ -62,6 +57,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
 {% endblock %}

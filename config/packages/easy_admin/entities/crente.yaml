@@ -10,16 +10,15 @@ easy_admin:
                   max_results: 20
                   title: 'menu.membros'
                   actions:
-                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'show', label: '', icon: 'search',title: 'Search'}
                         - {name: 'search', label: 'menu.membros.pesquisar'}
-                        - {name: 'edit', label: '',icon: 'pencil'}
-                        - {name: 'delete', label: '',icon: 'trash' }
+                        - {name: 'edit', label: '',icon: 'pencil',title: 'Alterar'}
+                        - {name: 'delete', label: '',icon: 'trash',title: 'Apagar' }
+
                   fields:
                       #- { property: 'id',label: 'id' }
                       - { property: 'nome',label: 'nome',help: 'Nome Completo' }
-                      - { property: 'idade',label: 'idade' }
-                      - { property: 'genero',label: 'genero' }
-
+                      - { property: 'genero',label: 'Genero' }
                       - {property: 'batizado', label: 'Batizado'}
                       - {property: 'dizimista', label: 'Dizimista'}
               form:
@@ -27,7 +26,7 @@ easy_admin:
                       - { type: 'group', css_class: 'col-sm-6', label: 'Dados Pessoas'}
                       - { property: 'bi',label: 'N.Doc' }
                       - { property: 'nome',label: 'nome' }
-                      - { property: 'idade',label: 'idade' }
+                      - { property: 'dateNascimento',label: 'Data De Nascimento',type: 'birthday',type_options: {format: 'dd-MM-yyyy' } }
                       - { property: 'endereco',label: 'endereco' }
                       - { property: 'telefone',label: 'telefone' }
                       - { property: 'genero',type: 'choice', type_options: { expanded: false, choices: '%genero%' }, label: 'Genero' }
@@ -45,13 +44,14 @@ easy_admin:
                       - { property: 'cargos',type: 'easyadmin_autocomplete', label: 'Cargo'}
                       - { property: 'filias',type: 'easyadmin_autocomplete', label: 'Igreja'}
                       - { property: 'funcoes',type: 'easyadmin_autocomplete', label: 'Funcao'}
+                      - { property: 'dateCadastro', label: 'Data de Cadastro'}
               show:
 #                  require_permission: ["ROLE_SUPER_ADMIN"]
                   fields:
                       - { property: 'id',label: 'id' }
                       - { property: 'bi',label: 'N.Doc' }
                       - { property: 'nome',label: 'nome' }
-                      - { property: 'idade',label: 'idade' }
+                      - { property: 'dateNascimento',label: 'Data De Nascimento' }
                       - { property: 'genero',label: 'genero' }
 
                       - { property: 'telefone',label: 'telefone' }
@@ -66,3 +66,4 @@ easy_admin:
                       - { property: 'cargos', label: 'Cargo'}
                       - { property: 'funcoes', label: 'Funcao'}
                       - { property: 'filias', label: 'Igreja'}
+                      - { property: 'dateCadastro', label: 'Data de Cadastro'}

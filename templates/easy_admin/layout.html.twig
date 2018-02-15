@@ -1,0 +1,4 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}

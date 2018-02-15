@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Crente;
 use App\Entity\Lancamento;
-use App\Service\CsvExporter;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
 use JavierEguiluz\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
 
@@ -25,13 +23,13 @@ class AdminController extends BaseAdminController
     public function persistUserEntity($user)
     {
         $this->get('fos_user.user_manager')->updateUser($user, false);
-        parent::persistUserEntity($user);
+        parent::persistEntity($user);
     }
 
     public function updateUserEntity($user)
     {
         $this->get('fos_user.user_manager')->updateUser($user, false);
-        parent::updateUserEntity($user);
+        parent::updateEntity($user);
     }
 
 

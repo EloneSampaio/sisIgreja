@@ -13,6 +13,16 @@ class SaidaRepository
     {
         parent::__construct($registry, Saida::class);
     }
+    public function countValorPrintedForSaida()
+    {
+        return $this->createQueryBuilder('c')
+            ->select('SUM(c.valor)')
+            ->getQuery()
+            ->useQueryCache(true)
+            ->useResultCache(true, 3600)
+            ->getSingleScalarResult();
 
+
+    }
 
 }

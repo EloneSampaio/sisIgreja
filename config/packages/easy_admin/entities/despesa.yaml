@@ -11,6 +11,7 @@ easy_admin:
                         - {name: 'search', label: 'menu.despesa.pesquisar'}
                         - {name: 'edit', label: '', icon: 'pencil'}
                         - {name: 'delete', label: '',icon: 'trash'}
+
                   fields:
 
                         - { property: 'dateVencimento',label: 'Vencimento' }
@@ -18,7 +19,6 @@ easy_admin:
                         - { property: 'valor',label: 'Valor' }
 
                         - {property: 'recebido', label: 'Pago'}
-                        - {property: 'valorTotal', label: 'Total'}
               form:
                   fields:
                         - { type: 'group', css_class: 'col-sm-6', label: 'Dados da fatura',icon: 'truck'}
@@ -30,8 +30,6 @@ easy_admin:
                         - { property: 'datePagamento',label: 'Pagamento' }
                         - { type: 'group', css_class: 'col-sm-6', label: 'Valores Pagos' }
                         - { property: 'valor',label: 'Valor Pago',type: 'number' }
-                        - { property: 'juros',label: 'Juros',type: 'number' }
-                        - { property: 'valorTotal',label: 'Total' ,type: 'number'}
                         - { type: 'group', css_class: 'col-sm-6', label: '' }
                         - { property: 'recebido',label: 'Foi Recebido?' }
 

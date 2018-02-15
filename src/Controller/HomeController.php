@@ -2,11 +2,14 @@
 namespace App\Controller;
 
 use App\Entity\Crente;
-use APY\DataGridBundle\Grid\Source\Entity;
+use App\Entity\Despesa;
+use App\Entity\Dizimo;
+use App\Entity\Entrada;
+use App\Entity\Oferta;
+use App\Entity\Saida;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use APY\DataGridBundle\Grid\Mapping as GRID;
 
 class HomeController extends Controller {
 
@@ -34,7 +37,7 @@ class HomeController extends Controller {
 
 
 
-        return $this->render('easy_admin/dashboard.html.twig',array(
+        return $this->render('home/dashboard.html.twig',array(
             'total'=>$total,
             'totalBatizado'=>$totalBatizado,
             'totalNotBatizado'=>$totalNotBatizado,
@@ -48,6 +51,33 @@ class HomeController extends Controller {
 
         ));
 
+    }
+
+
+    public function caixa(){
+
+        $totalDizimo=$this->getDoctrine()->getRepository(Dizimo::class)->countValorPrintedForDizimo();
+        $totalOferta=$this->getDoctrine()->getRepository(Oferta::class)->countValorPrintedForOferta();
+        $totalSaida=$this->getDoctrine()->getRepository(Saida::class)->countValorPrintedForSaida();
+        $totalDespesa=$this->getDoctrine()->getRepository(Despesa::class)->countValorPrintedForDespesa();
+        $totalEntrada=$this->getDoctrine()->getRepository(Entrada::class)->countValorPrintedForEntrada();
+
+        $saldo=($totalDizimo+$totalOferta+$totalEntrada) - ($totalDespesa+$totalSaida);
+        return $this->render('home/caixa.html.twig',
+            array(
+
+                'totalDizimo'=>$totalDizimo,
+                'totalOferta'=>$totalOferta,
+                'totalSaida'=>$totalSaida,
+                'totalDespesa'=>$totalDespesa,
+                'totalEntrada'=>$totalEntrada,
+                'saldo'=>$saldo
+            ));
+    }
+
+    public function relatorio(){
+
+        return $this->render('relatorio/menu.html.twig');
     }
 }
 

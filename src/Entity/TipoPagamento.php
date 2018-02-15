@@ -58,6 +58,7 @@ class TipoPagamento
      */
     public function setNome($nome)
     {
+
         $this->nome = $nome;
     }
 

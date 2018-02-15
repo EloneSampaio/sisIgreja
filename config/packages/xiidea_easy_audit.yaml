@@ -1,0 +1,45 @@
+xiidea_easy_audit:
+    resolver: xiidea.easy_audit.default_event_resolver                           #Optional
+    entity_class : App\Entity\AuditLog                     #Required
+    entity_event_resolver : xiidea.easy_audit.default_entity_event_resolver      #Optional
+    default_logger : true                                                        #Optional
+    custom_resolvers :
+          security.interactive_login : event_resolver
+          fos_user.security.implicit_login : event_resolver
+
+
+    #user property to use as actor of an event
+    #valid value will be any valid property of your user class
+    user_property : username # or username                            #Optional
+
+    #List of doctrine entity:event you wish to track or set to false to disable logs for doctrine events
+    # valid events are = [created, updated, deleted]
+    doctrine_entities :                                              #Optional
+         App\Entity\Crente : [created, updated, deleted]
+         App\Entity\Despesa : [created, updated, deleted]
+         App\Entity\Dizimo : [created, updated, deleted]
+         App\Entity\Oferta : [created, updated, deleted]
+
+    #List all events you want to track  (Optional from v1.2.1 you can now use subscriber to define it)
+    events :                                                   #Optional
+        - security.interactive_login
+
+    #List all custom resolver for event
+    #custom_resolvers :
+    #       security.interactive_login : user.event_resolver
+    #       security.authentication.failure : user.event_resolver
+
+    logger_channel:
+        xiidea.easy_audit.logger.service: ["info", "debug"]
+        file.logger: ["!info", "!debug"]
+
+
+services:
+        event_resolver:
+             class:  App\Event\CustomEventResolver
+        #     calls:
+        #        - [ setContainer,[ @service_container ] ]
+
+
+
+

@@ -1,5 +1,9 @@
 easy_admin:
     site_name: '%app.name%'
+    formats:
+        datetime: 'd/m/Y h:i'
+        number: '%0.2f'
+
     design:
         form_theme: 'vertical'
         color_scheme: 'dark'
@@ -7,5 +11,13 @@ easy_admin:
         assets:
             css:
                 - 'css/main.css'
+                - 'css/calendar.css'
                 - 'css/font-awesome.css'
+            js:
+                - 'js/calendar.js'
+                - 'js/main.js'
+
+
+        templates:
+                  field_decimal: 'easy_admin/fields/_decimal.html.twig'
 

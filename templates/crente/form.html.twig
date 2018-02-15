@@ -1,0 +1,169 @@
+
+
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{#  bootstrap_4_layout.html.twig #}
+
+{% block title %}dicionar Crente{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('build/crente.css') }}" type="text/css" rel="stylesheet"></link>
+{% endblock %}
+
+    {% block menu %}
+        {{ parent() }}
+
+    {% endblock %}
+
+
+
+    {% block body %}
+
+
+        <div class="controls">
+
+            <div id="smartwizard">
+                <ul>
+                    <li><a href="#step-1">Informação Pessoal<br/>
+                            <small>Dados pessoais</small>
+                        </a></li>
+                    <li><a href="#step-2">Informação Familiar<br/>
+                            <small>Dados Familiares</small>
+                        </a></li>
+                    <li><a href="#step-3">Funçoes na Igreja<br/>
+                            <small>Atividades na igreja</small>
+                        </a></li>
+                    <li><a href="#step-4">Finalizar<br/>
+                            <small></small>
+                        </a></li>
+                </ul>
+
+                <div>
+
+                    <div id="step-1">
+                        {{ form_start(form) }}
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.nome) }}
+                            {{ form_errors(form.nome) }}
+                            {{ form_widget(form.nome) }}
+
+                        </div>
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.idade) }}
+                            {{ form_errors(form.idade) }}
+                            {{ form_widget(form.idade) }}
+                        </div>
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.estadoCivil) }}
+                            {{ form_errors(form.estadoCivil) }}
+                            {{ form_widget(form.estadoCivil) }}
+
+                        </div>
+
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.endereco) }}
+                            {{ form_errors(form.endereco) }}
+                            {{ form_widget(form.endereco) }}
+                        </div>
+
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.grauAcademico) }}
+                            {{ form_errors(form.grauAcademico) }}
+                            {{ form_widget(form.grauAcademico) }}
+
+                        </div>
+                        <div class="entry input-group col-xs-3">
+
+                            {{ form_label(form.profissao) }}
+                            {{ form_errors(form.profissao) }}
+                            {{ form_widget(form.profissao) }}
+                        </div>
+                    </div>
+
+
+                    {#step 1#}
+
+
+                    <div id="step-2" class="">
+
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.nomeMulher) }}
+                            {{ form_errors(form.nomeMulher) }}
+                            {{ form_widget(form.nomeMulher) }}
+                        </div>
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.numeroDeFilhos) }}
+                            {{ form_errors(form.numeroDeFilhos) }}
+                            {{ form_widget(form.numeroDeFilhos) }}
+                        </div>
+
+
+                        <div class="control-group" id="fields">
+                            <label class="control-label" for="field1">Nome dos filhos</label>
+                            <div class="controls">
+                                    <div class="entry input-group col-xs-3">
+                                        <input class="form-control" name="fields[]" type="text"
+                                               placeholder="nome dos filhos"/>
+                                        <span class="input-group-btn">
+                                                   <button class="btn btn-success btn-add" type="button">
+                                                       <span class="glyphicon glyphicon-plus"></span>
+                                                   </button>
+                                               </span>
+                                    </div>
+
+                                <br>
+                                <small>Pressiona <span class="glyphicon glyphicon-plus gs"></span>para adicionar
+                                    filhos:)
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+                    {#step 2#}
+
+                    <div id="step-3">
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.batizado) }}
+                            {{ form_errors(form.batizado) }}
+                            {{ form_widget(form.batizado) }}
+
+                        </div>
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.cargoIgreja) }}
+                            {{ form_errors(form.cargoIgreja) }}
+                            {{ form_widget(form.cargoIgreja) }}
+                        </div>
+
+                        <div class="entry input-group col-xs-3">
+                            {{ form_label(form.dizimista) }}
+                            {{ form_errors(form.dizimista) }}
+                            {{ form_widget(form.dizimista) }}
+                        </div>
+
+
+                    </div> {#step 3#}
+
+
+                    <div id="step-4">
+
+                        {{ form_widget(form.salvar) }}
+
+                    </div>
+                    {#step 4#}
+
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+
+
+    {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/crente.js') }}"></script>
+
+{% endblock %}

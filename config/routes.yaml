@@ -2,7 +2,13 @@ index:
     path: /
     defaults: { _controller: 'App\Controller\HomeController::index' }
 
+caixa:
+    path: /admin/caixa
+    defaults: { _controller: 'App\Controller\HomeController::caixa' }
 
+relatorio:
+    path: /admin/relatorio
+    defaults: { _controller: 'App\Controller\HomeController::relatorio' }
 
 crente_gerar_card:
     path: /admin/crente/card/{id}
@@ -13,8 +19,63 @@ crente_card:
     defaults: { _controller: 'App\Controller\CrenteController::cardAction' }
 
 lancamento_find:
-    path: /admin/crente/card/
+    path: /admin/lancamento/lista/
     defaults: { _controller: 'App\Controller\LancamentoController::listaAction' }
+
+
+    #relatorios
+
+relatorio_membro:
+    path: /admin/relatorio/membros
+    defaults: { _controller: 'App\Controller\RelatorioController::membros' }
+
+relatorio_membro_data:
+    path: /admin/relatorio/membrosDate
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosData' }
+
+relatorio_membro_batizado:
+    path: /admin/relatorio/membroBatizado
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosBatizado' }
+
+relatorio_membro_cargo:
+    path: /admin/relatorio/membroCargo
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosCargo' }
+
+relatorio_membro_funcao:
+    path: /admin/relatorio/membroFuncao
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosFuncao' }
+
+relatorio_membro_dizimista:
+    path: /admin/relatorio/membrosDizimista
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosDizimista' }
+
+relatorio_membro_aniversario:
+    path: /admin/relatorio/membroAniversario
+    defaults: { _controller: 'App\Controller\RelatorioController::membrosAniversario' }
+
+
+#financas
+
+relatorio_despesas:
+    path: /admin/relatorio/despesas
+    defaults: { _controller: 'App\Controller\RelatorioController::despesas' }
+
+
+relatorio_dizimos:
+    path: /admin/relatorio/dizimos
+    defaults: { _controller: 'App\Controller\RelatorioController::dizimos' }
+
+
+relatorio_dizimos_membro:
+    path: /admin/relatorio/dizimosMembroData
+    defaults: { _controller: 'App\Controller\RelatorioController::dizimosMembroData' }
+
+
+relatorio_ofertas:
+    path: /admin/relatorio/ofertas
+    defaults: { _controller: 'App\Controller\RelatorioController::ofertas' }
+
+
 
 fos_user:
         resource: "@FOSUserBundle/Resources/config/routing/all.xml"

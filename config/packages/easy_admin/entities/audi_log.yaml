@@ -1,0 +1,24 @@
+easy_admin:
+
+    entities:
+          AuditLog:
+              class: App\Entity\AuditLog
+              label: 'menu.log'
+              list:
+                  title: 'menu.log'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'search', label: 'menu.funcao.pesquisar'}
+
+
+                  fields:
+                    - { property: 'description',label: 'Descrição' }
+                    - { property: 'type',label: 'Tipo' }
+                    - { property: 'eventTime',label: 'Data' }
+                    - { property: 'user',label: 'Usuario' }
+              show:
+                  fields:
+                    - { property: 'description',label: 'Descrição' }
+                    - { property: 'type',label: 'Tipo' }
+                    - { property: 'eventTime',label: 'Data' }
+                    - { property: 'user',label: 'Usuario' }

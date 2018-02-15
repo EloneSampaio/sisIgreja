@@ -13,12 +13,28 @@ menu.usuarios:   Usuarios
 menu.cadastro:   Cadastros
 menu.utilitario:   Utilitarios
 menu.documento:   Documentos
-menu.financa:   Tesouraria
-
-
-
-
-
+menu.financa:   Finanças
+menu.despesa: Despesas
+menu.dizimo: Dizimos
+menu.oferta: Ofertas
+menu.entrada: Entradas
+menu.agenda: Agenda
+menu.fornecedor: Fornecedores
+menu.saida: Saidas
+menu.lancamento: Lançamentos
+menu.tipo_pagamento: Tipo de Pagamento
+menu.tipo_dizimo: Tipo de Dizimo
+menu.tipo_oferta: Tipo de Oferta
+menu.entrega_valor: Liderança
+menu.cadastro.outros: Outros Cadastros
+menu.financa.config: Cofigurar Finanças
+menu.carta_recomenda: Carta de Recomendação
+menu.carta_saida: Carta de Transferencia
+menu.patrimonio: Patrimonio
+menu.configuracao: Configuração
+menu.relatorio: Relatórios
+menu.caixa: Caixa
+menu.log: Logs
 
 #traduçao das opçoes de crente
 menu.membros.lista:   Listar Todos
@@ -27,7 +43,7 @@ menu.membros.detalhe: Ver
 menu.membros.pesquisar: Pesquisar
 menu.membros.alterar: Alterar
 menu.membros.apagar: Apagar
-menu.membro.cartao: Cartao de Membro
+menu.membro.cartao: Imprimir Cartão de Membro
 menu.membros.imprimir: Cartão
 menu.membros.config: Configurar Membro
 
@@ -98,4 +114,81 @@ menu.igreja.alterar: Alterar
 menu.igreja.apagar: Apagar
 menu.igreja.pesquisar: Pesquisar
 igreja.membro: Seleciona o Responsavel
+
+
+
+#traduçao das opçoes de despesa
+menu.despesa.lista:   Listar Todos
+menu.despesa.adicionar: Adicionar
+menu.despesa.detalhe: Ver
+menu.despesa.pesquisar: Pesquisar
+menu.despesa.alterar: Alterar
+menu.despesa.apagar: Apagar
+
+#traduçao das opçoes de dizimo
+menu.dizimo.lista:   Listar Todos
+menu.dizimo.adicionar: Adicionar
+menu.dizimo.detalhe: Ver
+menu.dizimo.pesquisar: Pesquisar
+menu.dizimo.alterar: Alterar
+menu.dizimo.apagar: Apagar
+
+#traduçao das opçoes de oferta
+menu.oferta.lista:   Listar Todos
+menu.oferta.adicionar: Adicionar
+menu.oferta.detalhe: Ver
+menu.oferta.pesquisar: Pesquisar
+menu.oferta.alterar: Alterar
+menu.oferta.apagar: Apagar
+
+#traduçao das opçoes de entrada
+menu.entrada.lista:   Listar Todos
+menu.entrada.adicionar: Adicionar
+menu.entrada.detalhe: Ver
+menu.entrada.pesquisar: Pesquisar
+menu.entrada.alterar: Alterar
+menu.entrada.apagar: Apagar
+
+#traduçao das opçoes de saida
+menu.saida.lista:   Listar Todos
+menu.saida.adicionar: Adicionar
+menu.saida.detalhe: Ver
+menu.saida.pesquisar: Pesquisar
+menu.saida.alterar: Alterar
+menu.saida.apagar: Apagar
+
+
+#traduçao das opçoes de tipo_pagamento
+menu.tipo_pagamento.lista:   Listar Todos
+menu.tipo_pagamento.adicionar: Adicionar
+menu.tipo_pagamento.detalhe: Ver
+menu.tipo_pagamento.pesquisar: Pesquisar
+menu.tipo_pagamento.alterar: Alterar
+menu.tipo_pagamento.apagar: Apagar
+
+
+#traduçao das opçoes de menu.tipo_dizimo
+menu.tipo_dizimo.lista:   Listar Todos
+menu.tipo_dizimo.adicionar: Adicionar
+menu.tipo_dizimo.detalhe: Ver
+menu.tipo_dizimo.pesquisar: Pesquisar
+menu.tipo_dizimo.alterar: Alterar
+menu.tipo_dizimo.apagar: Apagar
+
+#traduçao das opçoes de menu.tipo_oferta
+menu.tipo_oferta.lista:   Listar Todos
+menu.tipo_oferta.adicionar: Adicionar
+menu.tipo_oferta.detalhe: Ver
+menu.tipo_oferta.pesquisar: Pesquisar
+menu.tipo_oferta.alterar: Alterar
+menu.tipo_oferta.apagar: Apagar
+
+
+#traduçao das opçoes de menu.entrega_valor
+menu.entrega_valor.lista:   Listar Todos
+menu.entrega_valor.adicionar: Adicionar
+menu.entrega_valor.detalhe: Ver
+menu.entrega_valor.pesquisar: Pesquisar
+menu.entrega_valor.alterar: Alterar
+menu.entrega_valor.apagar: Apagar
 

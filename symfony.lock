@@ -74,9 +74,6 @@
     "giggsey/locale": {
         "version": "1.4"
     },
-    "jaspersoft/rest-client": {
-        "version": "v2.0.0"
-    },
     "javiereguiluz/easyadmin-bundle": {
         "version": "1.17",
         "recipe": {
@@ -112,6 +109,18 @@
     },
     "knplabs/knp-paginator-bundle": {
         "version": "v2.7.2"
+    },
+    "knplabs/knp-snappy": {
+        "version": "v1.0.4"
+    },
+    "knplabs/knp-snappy-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c81bdcf4a9d4e7b1959071457f9608631865d381"
+        }
     },
     "lavela/phpjasper": {
         "version": "v2.0"
@@ -287,9 +296,6 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
     },
-    "symfony/polyfill-util": {
-        "version": "v1.6.0"
-    },
     "symfony/process": {
         "version": "v3.4.3"
     },
@@ -386,8 +392,14 @@
     "twig/twig": {
         "version": "v2.4.4"
     },
-    "yoh/symfony-jasper-report-bundle": {
-        "version": "v1.2"
+    "xiidea/easy-audit": {
+        "version": "1.4",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.4",
+            "ref": "0e253fce4813fe8970bf24a2b1b97fc9de9f2615"
+        }
     },
     "zendframework/zend-code": {
         "version": "3.1.0"

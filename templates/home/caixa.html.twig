@@ -1,0 +1,94 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}
+
+{% set _content_title = 'Admin dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+
+{%- endblock %}
+
+{% block main %}
+
+<div id="page-wrapper">
+    <div class="graphs">
+        <div class="col_3">
+            <div class="col-md-2 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="fa" style="font-size:48px;color:red">&#xf0d6;</i>
+                    <div class="stats">
+                        <h6>{{ totalDizimo |number_format(2)}}</h6>
+                        <div class="grow">
+                            <p>Dizimos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="fa" style="font-size:48px;color:green">&#xf0d6;</i>
+                    <div class="stats">
+                        <h6>{{ totalOferta |number_format(2)}}</h6>
+                        <div class="grow grow1">
+                            <p>Ofertas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-2 widget widget1">
+                <div class="r3_counter_box">
+                    <i class="fa" style="font-size:48px;color:#8a6d3b">&#xf0d6;</i>
+                    <div class="stats">
+                        <h6>{{ totalDespesa |number_format(2)}}</h6>
+                        <div class="grow grow3">
+                             <p>Despesas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="col-md-2 widget widget1">
+                    <div class="r3_counter_box">
+                        <i class="fa" style="font-size:48px;">&#xf0d6;</i>
+                        <div class="stats">
+                            <h6>{{ totalSaida |number_format(2)}}</h6>
+                            <div class="grow grow2">
+                                <p>Saidas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-2 widget ">
+                <div class="r3_counter_box">
+                    <i class="fa" style="font-size:48px;color:#9f191f">&#xf0d6;</i>
+                    <div class="stats">
+                        <h6>{{ totalEntrada |number_format(2)}}</h6>
+                        <div class="grow">
+                            <p>Entrada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"> </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+    <div class="pull-right">
+        {% if  saldo >=0 %}
+        <h3 class="text-success ">Saldo Total: {{ saldo |number_format  }} KZ</h3>
+        {% else  %}
+            <h3 class="text-danger ">Saldo Total: {{ saldo |number_format  }} KZ</h3>
+        {% endif %}
+    </div>
+        {% endblock %}
+

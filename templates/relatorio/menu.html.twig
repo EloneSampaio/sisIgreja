@@ -1,0 +1,112 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}
+
+{% set _content_title = 'Admin dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+
+{%- endblock %}
+
+{% block main %}
+
+    <div class="grid_3 grid_5">
+        <h3>Relatórios</h3>
+        <div class="but_list">
+            <div class="col-md-6 page_1">
+                <p>Finanças.</p>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th width="50%">Nomes</th>
+                        <th width="50%">Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Despesas</td>
+                        <td><a href="{{ path('relatorio_despesas') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Dizimos</td>
+                        <td><a href="{{ path('relatorio_dizimos') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+
+                    {#<tr>
+                        <td>Dizimos Ano Membro</td>
+                        <td><a href="{{ path('relatorio_dizimos_membro') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>#}
+                    <tr>
+                        <td> Ofertas</td>
+                        <td><a href="{{ path('relatorio_ofertas') }} "><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+                  {#  <tr>
+                        <td>Lançamentos</td>
+                        <td><a href="#"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>#}
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-6 page_1">
+                <p>Membros</p>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th width="50%">Nomes</th>
+                        <th width="50%">Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>Membros</td>
+                        <td><a href="{{ path('relatorio_membro') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Membro Por Data</td>
+                        <td><a href="{{ path('relatorio_membro_data') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Membros Batizados</td>
+                        <td><a href="{{ path('relatorio_membro_batizado') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+
+
+                    <tr>
+                        <td> Membros Por Cargo</td>
+                        <td><a href="{{ path('relatorio_membro_cargo') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Membros Por Função</td>
+                        <td><a href="{{ path('relatorio_membro_funcao') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Membros Dimizista</td>
+                        <td><a href="{{ path('relatorio_membro_dizimista') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Aniversariantes</td>
+                        <td><a href="{{ path('relatorio_membro_aniversario') }}"><i class="fa fa-print" style="font-size:28px;color:#9f191f"></i></a></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

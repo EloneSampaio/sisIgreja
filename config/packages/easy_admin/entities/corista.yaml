@@ -1,0 +1,17 @@
+easy_admin:
+    entities:
+          Corista:
+              class: App\Entity\Corista
+              label: 'menu.corista'
+              list:
+                  title: 'menu.corista'
+                  actions:
+                        - {name: 'show', label: 'menu.corista.detalhe', icon: 'search'}
+                        - {name: 'search', label: 'menu.corista.pesquisar'}
+                        - {name: 'edit', label: 'menu.corista.alterar'}
+                        - {name: 'delete', label: 'menu.corista.apagar'}
+                  fields:
+                    - { property: 'crentes',label: 'corista.membro' }
+              form:
+                  fields:
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'corista.membro'}

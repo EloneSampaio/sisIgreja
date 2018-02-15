@@ -2,12 +2,12 @@ easy_admin:
     entities:
           TipoPagamento:
               class: App\Entity\TipoPagamento
-              label: 'menu.pagamento'
+              label: 'menu.tipo_pagamento'
               list:
-                  title: 'menu.pagamento'
+                  title: 'menu.tipo_pagamento'
                   actions:
                         - {name: 'show', label: '', icon: 'search'}
-                        - {name: 'search', label: 'menu.pagamento.pesquisar'}
+                        - {name: 'search', label: 'menu.tipo_pagamento.pesquisar'}
                         - {name: 'edit', label: '', icon: 'pencil'}
                         - {name: 'delete', label: '',icon: 'trash'}
                   fields:

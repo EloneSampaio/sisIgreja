@@ -11,11 +11,14 @@ easy_admin:
                         - {name: 'search', label: 'menu.dizimo.pesquisar'}
                         - {name: 'edit', label: '', icon: 'pencil'}
                         - {name: 'delete', label: '',icon: 'trash'}
+
                   fields:
-                    - { property: 'nome',label: 'nome' }
+                    - { property: 'crentes',label: 'Nome' }
+                    - { property: 'valor',label: 'Valor' }
+                    - { property: 'datePagamento',label: 'Data' }
+                    - { property: 'tipoPagamentos',label: 'Forma de Pagamento' }
               form:
                   fields:
-                  - { property: 'nome',label: 'nome' }
                   - { property: 'obs',label: 'Observaçao' }
                   - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
                   - { property: 'entregaValores',type: 'easyadmin_autocomplete', label: 'Dia ou na liderança do(a):'}
@@ -25,7 +28,6 @@ easy_admin:
                   - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }
               show:
                   fields:
-                  - { property: 'nome',label: 'nome' }
                   - { property: 'obs',label: 'Observaçao' }
                   - { property: 'crentes', label: 'Membro'}
                   - { property: 'entregaValores', label: 'Dia ou na liderança do(a)'}

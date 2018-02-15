@@ -33,11 +33,7 @@ class Crente
      */
 
     private $bi;
-    /**
-     * @ORM\Column(type="integer")
-     */
 
-    private $idade;
     /**
      * @ORM\Column(type="string", length=100)
      */
@@ -130,6 +126,21 @@ class Crente
      *
      *   */
     private $telefone;
+
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="date")
+     */
+    protected $dateCadastro;
+
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(type="date")
+     */
+    protected $dateNascimento;
+
     /**
      * @return mixed
      */
@@ -162,21 +173,6 @@ class Crente
         $this->nome = $nome;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getIdade()
-    {
-        return $this->idade;
-    }
-
-    /**
-     * @param mixed $idade
-     */
-    public function setIdade($idade)
-    {
-        $this->idade = $idade;
-    }
 
     /**
      * @return mixed
@@ -345,6 +341,7 @@ class Crente
 
     public function __construct()
     {
+        $this->dateCadastro = new \DateTime();
         $this->coristas=new ArrayCollection();
 
 
@@ -505,6 +502,38 @@ class Crente
     public function setOfertas($ofertas)
     {
         $this->ofertas = $ofertas;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateCadastro()
+    {
+        return $this->dateCadastro;
+    }
+
+    /**
+     * @param \DateTime $dateCadastro
+     */
+    public function setDateCadastro( $dateCadastro)
+    {
+        $this->dateCadastro = $dateCadastro;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateNascimento()
+    {
+        return $this->dateNascimento;
+    }
+
+    /**
+     * @param \DateTime $dateNascimento
+     */
+    public function setDateNascimento( $dateNascimento)
+    {
+        $this->dateNascimento = $dateNascimento;
     }
 
 

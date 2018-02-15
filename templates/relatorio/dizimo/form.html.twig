@@ -1,0 +1,34 @@
+{% extends '@EasyAdmin/default/layout.html.twig' %}
+{% block body_class %}
+    {{ app.user.roles|default([])|join(' ')|lower }}
+{% endblock %}
+
+{% set _content_title = 'Admin dashboard' %}
+{% block page_title -%}
+    {{ _content_title }}
+
+{%- endblock %}
+
+
+{%   block scritp %}
+
+           <script type="text/javascript">
+               $('.field-collection').on('easyadmin.collection.item-added', function() {
+                   var $fields = $(this).find('select[data-easyadmin-autocomplete-url]');
+                   if ($fields.length) {
+                       createAutoCompleteFields($fields);
+                   }
+               });
+           </script>
+
+{%   endblock %}
+
+{% block main %}
+
+    <h3>Pesquisar</h3>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+{% endblock %}

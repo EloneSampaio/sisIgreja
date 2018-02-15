@@ -8,6 +8,7 @@
 
 namespace App\Twig;
 
+use App\Entity\AuditLog;
 use App\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -33,9 +34,10 @@ class EasyAdminExtension extends AbstractExtension
     public function filterActions(array $itemActions, $item)
     {
         unset($itemActions['export']);
-       /* if ($item instanceof Crente && $item->getBatizado()) {
+        if ($item instanceof AuditLog) {
             unset($itemActions['delete']);
-        }*/
+            unset($itemActions['edit']);
+        }
 
         if ($item instanceof User && !$this->authorizationChecker->isGranted('ROLE_SUPER_ADMIN')) {
             unset($itemActions['edit']);

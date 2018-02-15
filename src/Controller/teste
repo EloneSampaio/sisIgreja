@@ -1,0 +1,1 @@
+                - {'property': 'plainPassword', type: 'repeated', type_options: { type: Symfony\Component\Form\Extension\Core\Type\PasswordType, required: false, first_options: {label: 'label.password'}, second_options: {label: 'label.password_confirmation'} } }
