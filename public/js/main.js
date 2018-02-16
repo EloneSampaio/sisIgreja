@@ -5,6 +5,10 @@ $(document).ready(function() {
     var m = date.getMonth();
     var y = date.getFullYear();
 
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    });
+
     /*  className colors
 
     className: default(transparent), important(red), chill(pink), success(green), info(blue)
@@ -14,7 +18,7 @@ $(document).ready(function() {
 
     /* initialize the external events
     -----------------------------------------------------------------*/
-
+/*
     $('#external-events div.external-event').each(function() {
 
         // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
@@ -33,12 +37,12 @@ $(document).ready(function() {
             revertDuration: 0  //  original position after the drag
         });
 
-    });
+    });*/
 
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
-
+/*
     var calendar =  $('#calendar').fullCalendar({
         header: {
             left: 'title',
@@ -150,7 +154,7 @@ $(document).ready(function() {
                 className: 'success'
             }
         ],
-    });
+    });*/
 
 
 });

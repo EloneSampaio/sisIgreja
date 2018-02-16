@@ -69,6 +69,15 @@ services:
 #                  - "@security.authorization_checker"
 #            tags:
 #              - { name: twig.extension }
+
+    twig.extension.intl:
+          class: Twig_Extensions_Extension_Intl
+          tags:
+             - { name: twig.extension }
+
+
+
+
 knp_snappy:
         pdf:
             enabled:    true
@@ -89,5 +98,7 @@ knp_snappy:
             options:    []
         temporary_folder: "%kernel.cache_dir%/snappy"
         process_timeout: 90 # In seconds
+
+
 
 

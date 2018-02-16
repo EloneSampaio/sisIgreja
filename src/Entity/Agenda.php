@@ -24,25 +24,18 @@ class Agenda
     private $nome;
 
     /**
-     * The date of the delivery (it doesn't include the time).
-     *
+
      * @var \DateTime
-     * @ORM\Column(type="date",nullable=true)
+     * @ORM\Column(type="date")
      */
-    protected $data = null;
+    protected $data;
 
+    /**
 
-    public function __construct()
-    {
-        $this->data = new \DateTime();
-
-
-    }
-
-    public function __toString()
-    {
-        return $this->getNome();
-    }
+     * @var \DateTime
+     * @ORM\Column(type="date")
+     */
+    protected $time;
 
     /**
      * @return mixed
@@ -77,22 +70,44 @@ class Agenda
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
-    public function getCrentes()
+    public function getData()
     {
-        return $this->crentes;
+        return $this->data;
     }
 
     /**
-     * @param mixed $crentes
+     * @param \DateTime $data
      */
-    public function setCrentes($crentes)
+    public function setData(\DateTime $data)
     {
-        $this->crentes->clear();
-        $this->crentes = new ArrayCollection($crentes);
+        $this->data = $data;
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getTime()
+    {
+        return $this->time;
+    }
+
+    /**
+     * @param \DateTime $time
+     */
+    public function setTime(\DateTime $time)
+    {
+        $this->time = $time;
+    }
+
+
+    public function __construct()
+    {
+        $this->data = new \DateTime();
+
+
+    }
 
 
 

@@ -3,12 +3,18 @@ easy_admin:
           Agenda:
               class: App\Entity\Agenda
               controller:   App\Controller\AgendaController
+              disabled_actions: ['search', 'delete', 'list']
               label: 'menu.agenda'
               list:
                   title: 'menu.agenda'
                   actions:
-                        - {name: 'show', label: '', icon: 'search'}
-                        - {name: 'search', label: 'menu.agenda.pesquisar'}
                         - {name: 'edit', label: '', icon: 'pencil'}
-                        - {name: 'delete', label: '',icon: 'trash'}
+
+                  fields:
+                         - { property: 'nome',label: 'nome' }
+              form:
+                  fields:
+                         - { property: 'nome',label: 'Evento' }
+                         - { property: 'data',label: 'Data Do Evento',type_options: {format: 'dd-MM-yyyy' } }
+                         - { property: 'time',label: 'Horário' , type: 'time' }
 

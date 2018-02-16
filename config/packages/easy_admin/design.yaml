@@ -13,9 +13,7 @@ easy_admin:
                 - 'css/main.css'
                 - 'css/calendar.css'
                 - 'css/font-awesome.css'
-            js:
-                - 'js/calendar.js'
-                - 'js/main.js'
+
 
 
         templates:
