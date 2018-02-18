@@ -14,8 +14,10 @@ easy_admin:
                     - { property: 'valor',label: 'Valor' }
               form:
                   fields:
+                  - { type: 'group', css_class: 'col-sm-6', label: 'Dados',icon: 'truck'}
                   - { property: 'obs',label: 'Observaçao' }
                   - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Membro'}
+                  - { type: 'group', css_class: 'col-sm-6', label: 'Detalhes' }
                   - { property: 'valor',label: 'Valor:' }
                   - { property: 'datePagamento',label: 'Data:' }
                   - { property: 'tipoPagamentos',label: 'Forma de Pagamento:' }

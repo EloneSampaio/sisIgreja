@@ -297,6 +297,13 @@ class RelatorioController extends Controller
     }
 
 
+    public function imprimirCardAction($id){
+
+        $membro = $this->getDoctrine()->getRepository(Crente::class)->findOneBy(['id'=>$id]);
+        return $this->imageReport($membro, 'relatorio/membro/cartao.html.twig');
+
+    }
+
 
 
     public function report($data, $view)
@@ -321,6 +328,20 @@ class RelatorioController extends Controller
             'header-html' => $header,
             'footer-html' => $footer,
         ));
+        return $this->file($output, null, ResponseHeaderBag::DISPOSITION_INLINE);
+    }
+
+
+    public function imageReport($data,$view)
+    {
+        $pathPublic = $this->get('kernel')->getProjectDir() . '/public';
+        $path = $this->get('kernel')->getProjectDir() . '/public/report/imagens/';
+        $output = $path . time() . 'image.jpg';
+        $html = $this->renderView($view, array(
+            'data' => $data,
+            'path' => $pathPublic
+        ));
+        $this->get('knp_snappy.image')->generateFromHtml($html, $output);
         return $this->file($output, null, ResponseHeaderBag::DISPOSITION_INLINE);
     }
 

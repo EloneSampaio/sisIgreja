@@ -4,9 +4,9 @@ easy_admin:
     design:
       menu:
           - { label: 'menu.dashboard', route: 'index', default: true,role: ROLE_ADMIN }
-          - { label: 'menu.caixa', route: 'caixa',role: ROLE_SUPER_ADMIN }
+          - { label: 'menu.caixa', route: 'caixa',role: ROLE_SUPER_ADMIN ,icon: 'fa fa-archive'}
           - label: 'menu.cadastro'
-            icon: 'shopping-basket'
+            icon: 'fa fa-floppy-o'
             role: ROLE_SUPER_ADMIN
             children:
                 - { entity: 'Crente', icon: 'plus-circle', label: 'menu.membros', params: {sortField: 'id'} }
@@ -14,18 +14,18 @@ easy_admin:
                 - { entity: 'Fornecedor', icon: 'plus-circle', label: 'menu.fornecedor', params: {sortField: 'id'} }
                 - {label: 'menu.usuarios', entity: 'User', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
 
-#          - label: 'menu.documento'
-#            icon: 'shopping-basket'
-#            role: ROLE_SUPER_ADMIN
-#            children:
+          - label: 'menu.documento'
+            icon: 'fa fa-file-o'
+            role: ROLE_SUPER_ADMIN
+            children:
 #                - { entity: 'Funcao', icon: 'plus-circle', label: 'menu.carta_recomenda',  }
 #                - { entity: 'Funcao', icon: 'plus-circle', label: 'menu.carta_saida',  }
-#                - { entity: 'Crente', icon: 'plus-circle', label: 'menu.membro.cartao', params: {action: 'cardMenu'},role: ROLE_SUPER_ADMIN}
+                - { entity: 'Crente', icon: 'a fa-file-image-o', label: 'menu.membro.cartao', params: {action: 'cardMenu'},role: ROLE_SUPER_ADMIN}
 
 
 
           - label: 'menu.financa'
-            icon: 'shopping-basket'
+            icon: '	fa fa-credit-card'
             role: ROLE_SUPER_ADMIN
             children:
                   - { entity: 'Despesa', icon: 'plus-circle', label: 'menu.despesa', params: {action: 'list'},role: ROLE_SUPER_ADMIN}
@@ -35,11 +35,11 @@ easy_admin:
                   - { entity: 'Saida', icon: 'plus-circle', label: 'menu.saida', params: {action: 'list'},role: ROLE_SUPER_ADMIN}
                   - { entity: 'Lancamento', icon: 'plus-circle', label: 'menu.lancamento', params: {action: 'listaMenu'},role: ROLE_SUPER_ADMIN}
 
-          - { label: 'menu.relatorio', route: 'relatorio' }
+          - { label: 'menu.relatorio', route: 'relatorio', icon: 'fa fa-clipboard '}
 
 
           - label: 'menu.financa.config'
-            icon: 'shopping-basket'
+            icon: 'fa fa-gears'
             role: ROLE_SUPER_ADMIN
             children:
                     - { entity: 'TipoPagamento', icon: 'plus-circle', label: 'menu.tipo_pagamento', }
@@ -48,7 +48,7 @@ easy_admin:
                     - { entity: 'EntregaValor', icon: 'plus-circle', label: 'menu.entrega_valor',  }
 
           - label: 'menu.membros.config'
-            icon: 'shopping-basket'
+            icon: 'fa fa-id-card'
             role: ROLE_SUPER_ADMIN
             children:
                 - { entity: 'Cargo', icon: 'plus-circle', label: 'menu.cargo', }
@@ -56,7 +56,7 @@ easy_admin:
 
 
           - label: 'menu.cadastro.outros'
-            icon: 'shopping-basket'
+            icon: 'fa fa-inbox'
             role: ROLE_ADMIN
             children:
             - { entity: 'Corista', icon: 'plus-circle', label: 'menu.corista', }
@@ -66,9 +66,9 @@ easy_admin:
 
 
 
-          - {label: 'menu.patrimonio', entity: 'Patrimonio', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
-          - {label: 'menu.log', entity: 'AuditLog', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
+          - {label: 'menu.patrimonio', entity: 'Patrimonio', icon: 'fa fa-home', role: ROLE_SUPER_ADMIN }
+          - {label: 'menu.log', entity: 'AuditLog', icon: 'fa fa-file-text', role: ROLE_SUPER_ADMIN }
 
-          - { label: 'menu.configuracao', route: 'index', default: true,role: ROLE_SUPER_ADMIN }
+#          - { label: 'menu.configuracao', route: 'index', default: true,role: ROLE_SUPER_ADMIN, icon: 'fa fa-gear' }
 
 

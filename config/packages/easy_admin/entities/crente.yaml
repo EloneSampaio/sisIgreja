@@ -17,6 +17,7 @@ easy_admin:
 
                   fields:
                       #- { property: 'id',label: 'id' }
+                      - { property: 'image', type: 'image', base_path: '%app.path.membro_images%', label: '#' }
                       - { property: 'nome',label: 'nome',help: 'Nome Completo' }
                       - { property: 'genero',label: 'Genero' }
                       - {property: 'batizado', label: 'Batizado'}
@@ -45,9 +46,11 @@ easy_admin:
                       - { property: 'filias',type: 'easyadmin_autocomplete', label: 'Igreja'}
                       - { property: 'funcoes',type: 'easyadmin_autocomplete', label: 'Funcao'}
                       - { property: 'dateCadastro', label: 'Data de Cadastro'}
+                      - { property: 'imageFile', type: 'vich_image', label: 'Foto' }
               show:
 #                  require_permission: ["ROLE_SUPER_ADMIN"]
                   fields:
+                      - { property: 'image', type: 'image', base_path: '%app.path.membro_images%', label: '#' }
                       - { property: 'id',label: 'id' }
                       - { property: 'bi',label: 'N.Doc' }
                       - { property: 'nome',label: 'nome' }

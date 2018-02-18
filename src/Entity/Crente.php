@@ -5,10 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CrenteRepository")
+ * @Vich\Uploadable
  */
 class Crente
 {
@@ -140,6 +143,29 @@ class Crente
      * @ORM\Column(type="date")
      */
     protected $dateNascimento;
+
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $image;
+
+    /**
+     *@Assert\File(
+     *     maxSize="5M",
+     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg","image/jpg"}
+     * )
+     * @Vich\UploadableField(mapping="membro_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime",nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @return mixed
@@ -534,6 +560,42 @@ class Crente
     public function setDateNascimento( $dateNascimento)
     {
         $this->dateNascimento = $dateNascimento;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File $imageFile
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
 

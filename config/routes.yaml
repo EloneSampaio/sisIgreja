@@ -11,8 +11,8 @@ relatorio:
     defaults: { _controller: 'App\Controller\HomeController::relatorio' }
 
 crente_gerar_card:
-    path: /admin/crente/card/{id}
-    defaults: { _controller: 'App\Controller\CrenteController::imprimirCardAction' }
+    path: /admin/relatorio/card/{id}
+    defaults: { _controller: 'App\Controller\RelatorioController::imprimirCardAction' }
 
 crente_card:
     path: /admin/crente/card/

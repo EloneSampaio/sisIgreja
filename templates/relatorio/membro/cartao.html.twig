@@ -1,0 +1,195 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cartao de Membro</title>
+
+
+    <style>
+
+        * {
+            box-sizing:border-box;
+        }
+
+        body {
+            margin-top:80px;
+
+
+            font-family: "HelveticaNeue-CondensedBold", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        }
+
+        /*
+         * CSS Background Grid Lines by Jason Delia
+         * https://codepen.io/jasonadelia/pen/DnrAe
+         */
+
+
+        .card {
+            position:relative;
+            height:280px;
+            width:450px;
+            margin:0 auto;
+            background:#ECECEC;
+            border-radius:10px;
+
+            box-shadow:
+                    inset 0 0 0 1px rgba(0, 0, 0, .4),
+                    0 0 10px rgba(0, 0, 0, .55),
+                    0 2px 10px rgba(0, 0, 0, .6)
+        ;
+        }
+
+
+
+
+
+
+
+        .card header {
+            position:relative;
+            background: #ED3D34;
+            height:120px;
+            width:100%;
+            border-top-left-radius:4px;
+            border-top-right-radius:4px;
+            border-bottom:2px solid rgba(180, 80, 80, .5);
+            border-top:1px solid rgba(221, 108, 108, .8);
+            box-shadow:
+                    inset 0 1px 0 0 rgba(255, 120, 120, .8),
+                    0 1px 2px rgba(0, 0, 0, .4)
+        ;
+
+            padding:35px 20px;
+            opacity:.9;
+        }
+
+        /* top gradient */
+        .card header:after {
+            position:absolute;
+            content:'';
+            left:1px;
+            top:1px;
+            width:100%;
+            height:10px;
+            background:
+                    linear-gradient(bottom, rgba(255,255,255, .1) 0%, rgba(255,255,255,.05) 70%, rgba(255,255,255,0) 100%);
+        }
+
+
+
+        .card header h1 {
+            color:#fff;
+            line-height:50%;
+            font-size:25px;
+            margin-left:140;
+            margin-top: -65px;
+            text-shadow:-1px -1px 1px rgba(0, 0, 0, .5);
+        }
+
+        .card header h2 {
+            color:#fff;
+            line-height:50%;
+            font-size:19px;
+            margin-left:160;
+            margin-top: -20px;
+            text-shadow:-1px -1px 1px rgba(0, 0, 0, .5);
+        }
+
+        .card header u {
+            color:#fff;
+            font-size:19px;
+            margin-left:165;
+            margin-top: 100px;
+            text-shadow:-1px -1px 1px rgba(0, 0, 0, .5);
+        }
+
+
+        article .area {
+
+            margin-left:150;
+            margin-top: -125px;
+            font-size:14px;
+        }
+
+        .card article {
+            padding:30px;
+        }
+
+        .card article img {
+            border:5px solid #fff;
+            box-shadow:0 0 3px rgba(0, 0, 0, .25);
+            float:left;
+            margin-right:30px;
+            width:120px;
+            height:120px;
+            transition:all .3s ease-in-out;
+        }
+
+        .card article h2 {
+            color:#515355;
+            float:left;
+            margin:0 5px 15px 0;
+            font-weight:normal;
+            padding:0 0 8px 0;
+            width:450px;
+        }
+
+        .card article .area {
+            position:relative;
+            height:170px;
+            width:470px;
+            float:left;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+
+<div class="card">
+    <header>
+        <img src="{{  path ~  asset('img/logotipo/') ~  constant('App\\Entity\\Config::LOGOTIPO')  }}"  height="90" width="90" style="margin-top: -20px">
+        <h1>{{ constant('App\\Entity\\Config::NOME_IGREJA_SEDE') }}</h1><br />
+        <h2>{{ constant( 'App\\Entity\\Config::NOME_IGREJA_FILHA') }}</h2>
+        <u>{{ constant('App\\Entity\\Config::CARTAO_DE_MEMBRO') }}</u>
+    </header>
+    <article>
+        {% if data.image is defined %}
+        <img src="{{ path ~  vich_uploader_asset(data, 'imageFile', 'App\\Entity\\Crente') }}"   style="margin-top: -20px" />
+        {% else %}
+            <img src="#"   style="margin-top: -20px" />
+        {% endif %}
+        {% if data is defined %}
+        <div class="area">
+            {% if data.nome is defined %}
+            <h4>NOME </h4> <p>{{ data.nome }}</p>
+            {% endif %}
+            {% if data.funcoes.nome is defined %}
+            <h4>Cargo </h4><p>{{ data.cargos.nome }}</p>
+                {% else %}
+                    <h4>Cargo </h4><p>Membro</p>
+            {% endif %}
+
+
+        </div>
+        {% endif %}
+    </article>
+
+</div>
+</body>
+
+</html>

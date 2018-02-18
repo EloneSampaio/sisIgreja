@@ -1,3 +1,4 @@
+
 easy_admin:
     entities:
           Despesa:
@@ -31,5 +32,3 @@ easy_admin:
                         - { type: 'group', css_class: 'col-sm-6', label: 'Valores Pagos' }
                         - { property: 'valor',label: 'Valor Pago',type: 'number' }
                         - { type: 'group', css_class: 'col-sm-6', label: '' }
-                        - { property: 'recebido',label: 'Foi Recebido?' }
-
