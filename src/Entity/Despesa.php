@@ -24,7 +24,14 @@ class Despesa
     private $docNumber;
 
     /**
-     * @ORM\Column(type="string", length=100,nullable=true)
+     * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "Não pode ter menos de   {{ limit }} caracteres",
+     *      maxMessage = "Não pode ter mais de {{ limit }} caracteres"
+     * )
      */
 
     private $descricao;
@@ -41,7 +48,8 @@ class Despesa
      * The date of the delivery (it doesn't include the time).
      *
      * @var \DateTime
-     * @ORM\Column(type="date",nullable=true)
+     * @ORM\Column(type="date")
+     * @Assert\NotBlank()
      */
     protected $datePagamento = null;
     /**
@@ -49,6 +57,7 @@ class Despesa
      *
      * @var string
      * @ORM\Column(type="decimal")
+     * @Assert\NotBlank()
      */
     protected $valor;
 
@@ -66,7 +75,8 @@ class Despesa
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Fornecedor", inversedBy="despesas")
-     *  @ORM\JoinColumn(nullable=true)
+     *  @ORM\JoinColumn(nullable=false)
+     * @Assert\NotBlank()
      */
     private  $fornecedores;
 

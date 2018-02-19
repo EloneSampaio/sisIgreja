@@ -2,6 +2,7 @@ easy_admin:
     entities:
         User:
             class: App\Entity\User
+            label: 'menu.usuarios'
             form:
                 fields:
                     - { type: 'group', css_class: 'col-sm-6', label: 'Dados',icon: 'truck'}
@@ -25,6 +26,6 @@ easy_admin:
                 form_options: { validation_groups: ['Registration'] }
 
             list:
+                title: 'menu.usuarios'
                 fields:
-                      - id
                       - { property: 'username',label: 'Nome' }

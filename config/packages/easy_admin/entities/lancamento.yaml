@@ -4,6 +4,7 @@ easy_admin:
               class: App\Entity\Lancamento
               controller:   App\Controller\LancamentoController
               label: 'menu.lancamento'
+              disabled_actions: ['new', 'edit','delete']
               list:
                   title: 'menu.lancamento'
 

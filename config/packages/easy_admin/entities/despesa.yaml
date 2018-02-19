@@ -4,6 +4,7 @@ easy_admin:
           Despesa:
               class: App\Entity\Despesa
               label: 'menu.despesa'
+              disabled_actions: ['delete']
               list:
                   title: 'menu.despesa'
                   max_results: 20
@@ -24,11 +25,9 @@ easy_admin:
                   fields:
                         - { type: 'group', css_class: 'col-sm-6', label: 'Dados da fatura',icon: 'truck'}
                         - { property: 'docNumber',label: 'N.Doc' }
-                        - { property: 'fornecedores',label: 'Fornecedor/Empresa',type: 'easyadmin_autocomplete' }
+                        - { property: 'fornecedores',label: 'Fornecedor/Empresa',type: 'easyadmin_autocomplete',type_options: { required: true }  }
                         - { property: 'descricao',label: 'Descrição' }
                         - { type: 'group', css_class: 'col-sm-6', label: 'Detalhes' }
                         - { property: 'dateVencimento',label: 'Vencimento' }
                         - { property: 'datePagamento',label: 'Pagamento' }
-                        - { type: 'group', css_class: 'col-sm-6', label: 'Valores Pagos' }
                         - { property: 'valor',label: 'Valor Pago',type: 'number' }
-                        - { type: 'group', css_class: 'col-sm-6', label: '' }

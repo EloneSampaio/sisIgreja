@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DizimoRepository")
@@ -27,7 +29,7 @@ class Dizimo
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Crente", inversedBy="dizimos")
-     * @ORM\JoinColumn(nullable=true)
+     *  @ORM\JoinColumn(name="dizimos_id", referencedColumnName="id",nullable=true)
      */
     protected $crentes;
 

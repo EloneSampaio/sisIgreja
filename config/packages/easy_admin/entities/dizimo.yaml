@@ -4,6 +4,7 @@ easy_admin:
               class: App\Entity\Dizimo
               controller:   App\Controller\DizimoController
               label: 'menu.dizimo'
+              disabled_actions: ['delete']
               list:
                   title: 'menu.dizimo'
                   actions:

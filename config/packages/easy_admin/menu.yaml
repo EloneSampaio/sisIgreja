@@ -10,7 +10,7 @@ easy_admin:
             role: ROLE_SUPER_ADMIN
             children:
                 - { entity: 'Crente', icon: 'plus-circle', label: 'menu.membros', params: {sortField: 'id'} }
-                - { entity: 'Filial', icon: 'plus-circle', label: 'menu.igreja', params: {sortField: 'id'} }
+                #- { entity: 'Filial', icon: 'plus-circle', label: 'menu.igreja', params: {sortField: 'id'} }
                 - { entity: 'Fornecedor', icon: 'plus-circle', label: 'menu.fornecedor', params: {sortField: 'id'} }
                 - {label: 'menu.usuarios', entity: 'User', icon: 'user-circle-o', role: ROLE_SUPER_ADMIN }
 
@@ -69,6 +69,6 @@ easy_admin:
           - {label: 'menu.patrimonio', entity: 'Patrimonio', icon: 'fa fa-home', role: ROLE_SUPER_ADMIN }
           - {label: 'menu.log', entity: 'AuditLog', icon: 'fa fa-file-text', role: ROLE_SUPER_ADMIN }
 
-#          - { label: 'menu.configuracao', route: 'index', default: true,role: ROLE_SUPER_ADMIN, icon: 'fa fa-gear' }
+          - { label: 'menu.configuracao',role: ROLE_SUPER_ADMIN, icon: 'fa fa-gear', entity: 'Config' }
 
 

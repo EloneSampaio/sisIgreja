@@ -2,8 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Cargo;
 use App\Entity\Crente;
+use App\Entity\Funcao;
 use App\Service\CsvExporter;
+use EasyCorp\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,6 +23,21 @@ class CrenteController extends AdminController
     public function __construct(CsvExporter $csvExporter)
     {
         $this->csvExporter = $csvExporter;
+    }
+
+    protected function createNewCrenteEntity()
+    {
+        $entity = new Crente();
+
+
+        $cargo = $this->em->getRepository(Cargo::class)->find(13);
+        $funcao = $this->em->getRepository(Funcao::class)->find(7);
+
+        $entity->setCargos($cargo);
+        $entity->setFuncoes($funcao);
+
+
+        return $entity;
     }
 
 
@@ -166,6 +184,31 @@ class CrenteController extends AdminController
     }
 
 
+  /*  verifica se ja foi caastrado um membro com cargo de pastor*/
+
+    public function persistCrenteEntity($crente)
+    {
+
+        $cargo = $this->getDoctrine()
+            ->getRepository(Cargo::class)->findOneBy(['nome' => "Pastor"]);
+
+
+
+        $membro = $this->getDoctrine()
+            ->getRepository(Crente::class)->findOneBy(['cargos' => $crente->getCargos()]);
+       # var_dump($membro); die;
+
+        if($membro->getCargos()->getNome()===$cargo->getNome()){
+            $this->addFlash('error', 'Já tem um membro registrado como Pastor. Por favor contacta o suporte tecnico');
+            return  $this->redirect($this->generateUrl('easyadmin', array('action' => 'list', 'entity' => $this->entity['name'])));
+
+        }else{
+            parent::persistEntity($crente);
+
+        }
+
+
+    }
 
 
 

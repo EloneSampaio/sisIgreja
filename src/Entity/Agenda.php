@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AgendaRepository")
@@ -20,6 +22,7 @@ class Agenda
     // add your own fields
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $nome;
 
@@ -27,6 +30,7 @@ class Agenda
 
      * @var \DateTime
      * @ORM\Column(type="date")
+     * @Assert\NotBlank()
      */
     protected $data;
 

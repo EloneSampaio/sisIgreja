@@ -4,6 +4,7 @@ easy_admin:
               class: App\Entity\Oferta
               controller:   App\Controller\OfertaController
               label: 'menu.oferta'
+              disabled_actions: ['delete']
               list:
                   title: 'menu.oferta'
                   actions:

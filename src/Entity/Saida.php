@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SaidaRepository")
@@ -21,13 +23,14 @@ class Saida
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $obs;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Crente", inversedBy="dizimos")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Crente", inversedBy="saidas")
+     * @@ORM\JoinColumn(name="crentes_id", referencedColumnName="id",nullable=true)
      */
     protected $crentes;
 
@@ -52,6 +55,7 @@ class Saida
      *
      * @var string
      * @ORM\Column(type="decimal")
+     * @Assert\NotBlank()
      */
     protected $valor;
 

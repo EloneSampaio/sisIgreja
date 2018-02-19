@@ -26,7 +26,8 @@ class Crente
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=40)
+     * @Assert\NotBlank()
      */
 
     private $nome;
@@ -39,11 +40,13 @@ class Crente
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $estadoCivil;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $genero;
 
@@ -63,6 +66,7 @@ class Crente
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $grauAcademico;
 
@@ -73,14 +77,14 @@ class Crente
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Cargo", inversedBy="crentes")
-     *  @ORM\JoinColumn(nullable=true)
+     *  @ORM\JoinColumn(name="cargo_id", referencedColumnName="id",nullable=true)
      */
     private  $cargos;
 
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Funcao", inversedBy="crentes")
-     *  @ORM\JoinColumn(nullable=true)
+     *  @ORM\JoinColumn(name="funcao_id", referencedColumnName="id",nullable=true)
      */
     private  $funcoes;
 
@@ -95,6 +99,22 @@ class Crente
      */
     private  $filias;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Config", mappedBy="crentes", cascade={"remove"})
+     */
+    private  $config;
+
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Saida", mappedBy="crentes", cascade={"remove"})
+     */
+    private  $saidas;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Entrada", mappedBy="crentes", cascade={"remove"})
+     */
+    private  $entradas;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Oferta", mappedBy="conferentes")
@@ -103,8 +123,8 @@ class Crente
     private  $ofertas;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Dizimo", mappedBy="crentes")
-     *  @ORM\JoinColumn(nullable=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Dizimo", mappedBy="crentes", cascade={"remove"})
+     *
      */
     private  $dizimos;
 

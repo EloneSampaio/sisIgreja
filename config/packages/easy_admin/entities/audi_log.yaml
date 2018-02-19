@@ -4,6 +4,7 @@ easy_admin:
           AuditLog:
               class: App\Entity\AuditLog
               label: 'menu.log'
+              disabled_actions: ['new', 'delete', 'edit']
               list:
                   title: 'menu.log'
                   actions:

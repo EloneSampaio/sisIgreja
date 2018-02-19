@@ -44,6 +44,7 @@ class Filial
 
 
     /**
+     *
      *@ORM\OneToOne(targetEntity="App\Entity\Crente", inversedBy="filias",  orphanRemoval=true)
      * @@ORM\JoinColumn(name="crentes_id", referencedColumnName="id")
      */

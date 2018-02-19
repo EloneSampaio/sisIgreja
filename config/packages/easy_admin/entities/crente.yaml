@@ -26,14 +26,14 @@ easy_admin:
                   fields:
                       - { type: 'group', css_class: 'col-sm-6', label: 'Dados Pessoas'}
                       - { property: 'bi',label: 'N.Doc' }
-                      - { property: 'nome',label: 'nome' }
-                      - { property: 'dateNascimento',label: 'Data De Nascimento',type: 'birthday',type_options: {format: 'dd-MM-yyyy' } }
+                      - { property: 'nome',label: 'nome', type_options: { required: true }  }
+                      - { property: 'dateNascimento',label: 'Data De Nascimento',type: 'birthday',type_options: {format: 'dd-MM-yyyy', required: true  } }
                       - { property: 'endereco',label: 'endereco' }
                       - { property: 'telefone',label: 'telefone' }
-                      - { property: 'genero',type: 'choice', type_options: { expanded: false, choices: '%genero%' }, label: 'Genero' }
+                      - { property: 'genero',type: 'choice', type_options: { expanded: false, choices: '%genero%' }, label: 'Genero',required: true  }
 
-                      - { property: 'estadoCivil',type: 'choice', type_options: { expanded: false, choices: '%estadoCivil%' }, label: 'Estado Civíl' }
-                      - { property: 'grauAcademico',label: 'Nivel Academico', type: 'choice', type_options: { expanded: false, choices: '%grauAcademico%' } }
+                      - { property: 'estadoCivil',type: 'choice', type_options: { expanded: false, choices: '%estadoCivil%' }, label: 'Estado Civíl' , required: true  }
+                      - { property: 'grauAcademico',label: 'Nivel Academico', type: 'choice', type_options: { expanded: false, choices: '%grauAcademico%', required: true  } }
                       - { property: 'statusTrabalho',label: 'Trabalha' }
                       - { property: 'profissao',label: 'Profissao' }
                       - { type: 'group', css_class: 'col-sm-6', label: 'Dados Familiares' }
@@ -42,8 +42,8 @@ easy_admin:
                       - { type: 'group', css_class: 'col-sm-6', label: 'Dados Do Ministério'}
                       - { property: 'batizado', label: 'Batizado'}
                       - { property: 'dizimista', label: 'Dizimista'}
-                      - { property: 'cargos',type: 'easyadmin_autocomplete', label: 'Cargo'}
-                      - { property: 'filias',type: 'easyadmin_autocomplete', label: 'Igreja'}
+                      - { property: 'cargos',type: 'easyadmin_autocomplete', label: 'Cargo', }
+                      #- { property: 'filias',type: 'easyadmin_autocomplete', label: 'Igreja'}
                       - { property: 'funcoes',type: 'easyadmin_autocomplete', label: 'Funcao'}
                       - { property: 'dateCadastro', label: 'Data de Cadastro'}
                       - { property: 'imageFile', type: 'vich_image', label: 'Foto' }
@@ -68,5 +68,5 @@ easy_admin:
                       - { property: 'batizado', label: 'Batizado'}
                       - { property: 'cargos', label: 'Cargo'}
                       - { property: 'funcoes', label: 'Funcao'}
-                      - { property: 'filias', label: 'Igreja'}
+                      #- { property: 'filias', label: 'Igreja'}
                       - { property: 'dateCadastro', label: 'Data de Cadastro'}

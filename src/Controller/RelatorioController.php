@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Cargo;
+use App\Entity\Config;
 use App\Entity\Crente;
 use App\Entity\Despesa;
 use App\Entity\Dizimo;
@@ -309,12 +310,14 @@ class RelatorioController extends Controller
     public function report($data, $view)
     {
 
+        $config = $this->getDoctrine()->getRepository(Config::class)->findOneBy(['id'=>1]);
         $pathPublic = $this->get('kernel')->getProjectDir() . '/public/';
         $path = $this->get('kernel')->getProjectDir() . '/public/report/';
         $output = $path . time() . 'relatorio.pdf';
         $html = $this->renderView($view, array(
-            'data' => $data,
-            'path' => $pathPublic
+            'data' =>  $data,
+            'path' =>  $pathPublic,
+            'config'=> $config
         ));
         $header = $this->renderView('relatorio/header.html.twig', array(
             'path' => $pathPublic
@@ -334,12 +337,14 @@ class RelatorioController extends Controller
 
     public function imageReport($data,$view)
     {
+        $config = $this->getDoctrine()->getRepository(Config::class)->findOneBy(['id'=>1]);
         $pathPublic = $this->get('kernel')->getProjectDir() . '/public';
         $path = $this->get('kernel')->getProjectDir() . '/public/report/imagens/';
         $output = $path . time() . 'image.jpg';
         $html = $this->renderView($view, array(
-            'data' => $data,
-            'path' => $pathPublic
+            'data' =>  $data,
+            'path' =>  $pathPublic,
+            'config'=> $config
         ));
         $this->get('knp_snappy.image')->generateFromHtml($html, $output);
         return $this->file($output, null, ResponseHeaderBag::DISPOSITION_INLINE);

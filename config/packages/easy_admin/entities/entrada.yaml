@@ -3,6 +3,7 @@ easy_admin:
           Entrada:
               class: App\Entity\Entrada
               label: 'menu.entrada'
+              disabled_actions: ['delete']
               list:
                   title: 'menu.entrada'
                   actions:

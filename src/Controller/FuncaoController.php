@@ -2,64 +2,27 @@
 
 namespace App\Controller;
 
-use App\Entity\Lancamento;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
-use JavierEguiluz\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
+use App\Entity\Crente;
+use EasyCorp\Bundle\EasyAdminBundle\Event\EasyAdminEvents;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
-class AdminController extends BaseAdminController
+
+
+
+
+class FuncaoController extends AdminController
 {
-
-
-
-
-
-
-
-    public function createNewUserEntity()
-    {
-        return $this->get('fos_user.user_manager')->createUser();
-    }
-
-    public function persistUserEntity($user)
-    {
-        $this->get('fos_user.user_manager')->updateUser($user, false);
-        parent::persistEntity($user);
-    }
-
-    public function updateUserEntity($user)
-    {
-        $this->get('fos_user.user_manager')->updateUser($user, false);
-        parent::updateEntity($user);
-    }
-
-
-    public function listPageAction(){
-        $this->dispatch(EasyAdminEvents::PRE_LIST);
-    }
-
-
-    public function persistDespesaEntity($despesa)
-    {
-
-
-        $lancamento=new Lancamento();
-        $lancamento->setDescricao($despesa->getFornecedores());
-        $lancamento->setTipo($despesa->getDescricao());
-        $lancamento->setValor($despesa->getValor());
-
-        parent::persistEntity($despesa);
-        $this->em->persist($lancamento);
-        $this->em->flush();
-
-    }
-
-
 
 
     // Makes no possible to delete admin users via web app
     // We strongly recommend to use console if you have to delete some ROLE_ADMIN user.
-    public function deleteUserAction()
+    public function deleteFuncaoAction()
     {
+
+        $crente = $this->getDoctrine()
+            ->getRepository(Crente::class);
+
         $this->dispatch(EasyAdminEvents::PRE_DELETE);
 
         if ('DELETE' !== $this->request->getMethod()) {
@@ -70,6 +33,7 @@ class AdminController extends BaseAdminController
         $form = $this->createDeleteForm($this->entity['name'], $id);
         $form->handleRequest($this->request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $easyadmin = $this->request->attributes->get('easyadmin');
             $entity = $easyadmin['item'];
@@ -78,8 +42,13 @@ class AdminController extends BaseAdminController
              * OVERRIDING: No allow admin users to be deleted.
              */
             // we assumed that is only for users, cause the name of the method
-            if ($entity->hasRole('ROLE_SUPER_ADMIN')) {
-                $this->addFlash('error', 'Não podes eliminar usuarios que são administradores. Por favor contacta o suporte tecnico');
+
+            /*impedir que se remova categorias com mebros ja cadastrados nela*/
+            $teste=$crente->findOneBy(['funcoes'=>$entity]);
+
+            #var_dump($teste->getFuncoes()->getNome()); die;
+            if ($teste) {
+                $this->addFlash('error', 'Não podes eliminar essa função porque já tem  membros cadastrado nela. Por favor contacta o suporte tecnico para mais informações');
             }
             // END OVERRIDE
             else{
@@ -110,6 +79,5 @@ class AdminController extends BaseAdminController
 
 
 
-}
 
-?>
+}

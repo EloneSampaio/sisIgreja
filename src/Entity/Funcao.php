@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FuncaoRepository")
@@ -21,12 +23,13 @@ class Funcao
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
     private $nome;
 
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Crente", mappedBy="funcoes")
+     * @ORM\OneToMany(targetEntity="App\Entity\Crente", mappedBy="funcoes",cascade={"remove"})
      *  @ORM\JoinColumn(nullable=true)
      */
     protected  $crentes;

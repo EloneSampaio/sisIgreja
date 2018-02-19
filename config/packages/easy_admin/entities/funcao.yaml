@@ -2,6 +2,7 @@ easy_admin:
     entities:
           Funcao:
               class: App\Entity\Funcao
+              controller:   App\Controller\FuncaoController
               label: 'menu.funcao'
               list:
                   title: 'menu.funcao'

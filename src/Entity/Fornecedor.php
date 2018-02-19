@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Misd\PhoneNumberBundle\Validator\Constraints as MisdAssert;
 use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumber;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 
 
@@ -25,6 +27,7 @@ class Fornecedor
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank()
      */
 
     private $nome;

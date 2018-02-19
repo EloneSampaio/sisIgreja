@@ -1,0 +1,31 @@
+easy_admin:
+    entities:
+          Config:
+              class: App\Entity\Config
+              label: 'menu.configuracao'
+              disabled_actions: ['new', 'delete']
+              list:
+                  title: 'menu.configuracao'
+                  actions:
+                        - {name: 'show', label: '', icon: 'search'}
+                        - {name: 'edit', label: '', icon: 'pencil'}
+
+                  fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.membro_images%', label: '#' }
+                    - { property: 'igrejaSede',label: 'Igreja' }
+                    - { property: 'igrejaFilial',label: 'Celula' }
+                    - { property: 'crentes', label: 'Responsavel'}
+              form:
+                  fields:
+                  - { property: 'igrejaSede',label: 'Igreja' }
+                  - { property: 'igrejaFilial',label: 'Celula' }
+                  - { property: 'crentes',type: 'easyadmin_autocomplete', label: 'Responsavel'}
+                  - { property: 'imageFile', type: 'vich_image', label: 'Logo' }
+
+              show:
+                  fields:
+                  - { property: 'igrejaSede',label: 'Igreja' }
+                  - { property: 'igrejaFilial',label: 'Celula' }
+                  - { property: 'crentes', label: 'Responsavel'}
+                  - { property: 'image', type: 'image', base_path: '%app.path.membro_images%', label: '#' }
+

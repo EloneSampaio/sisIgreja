@@ -3,6 +3,7 @@ easy_admin:
           Saida:
               class: App\Entity\Saida
               label: 'menu.saida'
+              disabled_actions: ['delete']
               list:
                   title: 'menu.saida'
                   actions:

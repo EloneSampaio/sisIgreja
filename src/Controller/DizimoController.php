@@ -9,7 +9,12 @@
 namespace App\Controller;
 
 
+use App\Entity\Crente;
+use App\Entity\Dizimo;
+use App\Entity\EntregaValor;
 use App\Entity\Lancamento;
+use App\Entity\TipoDizimo;
+use App\Entity\TipoPagamento;
 
 class DizimoController extends AdminController
 {
@@ -27,6 +32,23 @@ class DizimoController extends AdminController
         $this->em->persist($lancamento);
         $this->em->flush();
 
+    }
+
+    protected function createNewDizimoEntity()
+    {
+        $entity = new Dizimo();
+
+
+        $valores = $this->em->getRepository(EntregaValor::class)->find(2);
+        $tipoDizimo = $this->em->getRepository(TipoDizimo::class)->find(1);
+        $tipoPagamento = $this->em->getRepository(TipoPagamento::class)->find(1);
+
+        $entity->setEntregaValores($valores);
+        $entity->setTipoDizimos($tipoDizimo);
+        $entity->setTipoPagamentos($tipoPagamento);
+
+
+        return $entity;
     }
 
 

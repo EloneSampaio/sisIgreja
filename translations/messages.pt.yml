@@ -1,6 +1,8 @@
 #nome da aplicaçao
 app.name: SisIgreja
 
+action.new: Adicionar
+label.null: Vazio
 #traduçao do menu
 menu.membros:   Membros
 menu.dashboard: Tela Inicial
