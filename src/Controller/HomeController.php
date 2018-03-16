@@ -25,7 +25,7 @@ class HomeController extends Controller {
 
 
 
-        $total=$this->getDoctrine()->getRepository(Crente::class)->count();
+        $total=$this->getDoctrine()->getRepository(Crente::class)->countt();
         $totalBatizado=$this->getDoctrine()->getRepository(Crente::class)->countBatizado(TRUE);
         $totalNotBatizado=$this->getDoctrine()->getRepository(Crente::class)->countBatizado(false);
         //generos

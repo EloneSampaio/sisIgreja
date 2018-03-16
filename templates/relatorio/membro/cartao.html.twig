@@ -162,23 +162,21 @@
 
 <div class="card">
     <header>
+
         <img src="{{ path ~  vich_uploader_asset(config, 'imageFile', 'App\\Entity\\Config') }}"  height="90" width="90" style="margin-top: -20px">
         <h1>{{ config.igrejaSede }}</h1><br />
         <h2>{{ config.igrejaFilial }}</h2>
         <u>{{ constant('App\\Entity\\Config::CARTAO_DE_MEMBRO') }}</u>
     </header>
     <article>
-        {% if data.image is defined %}
         <img src="{{ path ~  vich_uploader_asset(data, 'imageFile', 'App\\Entity\\Crente') }}"   style="margin-top: -20px" />
-        {% else %}
-            <img src="#"   style="margin-top: -20px" />
-        {% endif %}
+
         {% if data is defined %}
         <div class="area">
             {% if data.nome is defined %}
             <h4>NOME </h4> <p>{{ data.nome }}</p>
             {% endif %}
-            {% if data.funcoes.nome is defined %}
+            {% if data.cargos is defined %}
             <h4>Cargo </h4><p>{{ data.cargos.nome }}</p>
                 {% else %}
                     <h4>Cargo </h4><p>Membro</p>

@@ -44,7 +44,7 @@ class CrenteRepository extends ServiceEntityRepository
     }
 
 
-    public function count()
+    public function countt()
     {
         $qb = $this->createQueryBuilder('t');
         return $qb

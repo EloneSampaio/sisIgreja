@@ -48,13 +48,13 @@ class RelatorioController extends Controller
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia',
 
-                )
+                ),'label'=>'De',
             ))
             ->add('data2', DateTimeType::class, array(
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia'
 
-                )))
+                ),'label'=>'Até',))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -89,8 +89,12 @@ class RelatorioController extends Controller
     {
 
         $crente = new Crente();
+        $crente->setEstadoCivil('Solteiro');
+        $crente->setGenero('Masculino');
+        $crente->setGrauAcademico('Superior');
+        $crente->setNome('El');
         $form = $this->createFormBuilder($crente)
-            ->add('cargos', EntityType::class, array('class' => Cargo::class, 'choice_label' => 'nome'))
+            ->add('cargos', EntityType::class, array('class' => Cargo::class, 'choice_label' => 'nome','label'=>'Cargo'))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -114,8 +118,12 @@ class RelatorioController extends Controller
     {
 
         $crente = new Crente();
+        $crente->setEstadoCivil('Solteiro');
+        $crente->setGenero('Masculino');
+        $crente->setGrauAcademico('Superior');
+        $crente->setNome('El');
         $form = $this->createFormBuilder($crente)
-            ->add('funcoes', EntityType::class, array('class' => Funcao::class, 'choice_label' => 'nome'))
+            ->add('funcoes', EntityType::class, array('class' => Funcao::class, 'choice_label' => 'nome','label'=>'Função',))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -161,13 +169,13 @@ class RelatorioController extends Controller
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia',
 
-                )
+                ),'label'=>'De',
             ))
             ->add('data2', DateTimeType::class, array(
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia'
 
-                )))
+                ),'label'=>'Até',))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -200,13 +208,13 @@ class RelatorioController extends Controller
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia',
 
-                )
+                ),'label'=>'De',
             ))
             ->add('data2', DateTimeType::class, array(
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia'
 
-                )))
+                ),'label'=>'Até',))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -235,7 +243,7 @@ class RelatorioController extends Controller
 
         $dizimo = new Dizimo();
         $form = $this->createFormBuilder($dizimo)
-            ->add('crentes', EasyAdminAutocompleteType::class, array('class' => Crente::class))
+            ->add('crentes', EasyAdminAutocompleteType::class, array('label'=>'Função'))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 
@@ -268,13 +276,14 @@ class RelatorioController extends Controller
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia',
 
-                )
+                ),
+                'label'=>'De',
             ))
             ->add('data2', DateTimeType::class, array(
                 'placeholder' => array(
                     'year' => 'Ano', 'month' => 'Mes', 'day' => 'Dia'
 
-                )))
+                ), 'label'=>'Até',))
             ->add('save', SubmitType::class, array('label' => 'Imprimir'))
             ->getForm();
 

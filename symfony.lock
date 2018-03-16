@@ -1,15 +1,9 @@
 {
-    "almasaeed2010/adminlte": {
-        "version": "v2.4.3"
-    },
     "behat/transliterator": {
         "version": "v1.2.0"
     },
     "composer/ca-bundle": {
         "version": "1.1.0"
-    },
-    "composer/installers": {
-        "version": "v1.5.0"
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -68,11 +62,14 @@
     "doctrine/orm": {
         "version": "v2.5.14"
     },
+    "easycorp/easy-deploy-bundle": {
+        "version": "v1.0.2"
+    },
     "friendsofsymfony/user-bundle": {
         "version": "v2.0.2"
     },
     "giggsey/libphonenumber-for-php": {
-        "version": "8.8.9"
+        "version": "8.9.1"
     },
     "giggsey/locale": {
         "version": "1.4"
@@ -125,12 +122,6 @@
             "ref": "c81bdcf4a9d4e7b1959071457f9608631865d381"
         }
     },
-    "lavela/phpjasper": {
-        "version": "v2.0"
-    },
-    "liuggio/excelbundle": {
-        "version": "v2.1.0"
-    },
     "misd/phone-number-bundle": {
         "version": "v1.3.2"
     },
@@ -148,12 +139,6 @@
     },
     "phpcollection/phpcollection": {
         "version": "0.5.0"
-    },
-    "phpoffice/phpexcel": {
-        "version": "1.8.1"
-    },
-    "phpoffice/phpspreadsheet": {
-        "version": "1.1.0"
     },
     "phpoption/phpoption": {
         "version": "1.5.0"
@@ -232,6 +217,9 @@
     },
     "symfony/event-dispatcher": {
         "version": "v3.4.3"
+    },
+    "symfony/expression-language": {
+        "version": "v3.4.6"
     },
     "symfony/filesystem": {
         "version": "v3.4.3"
