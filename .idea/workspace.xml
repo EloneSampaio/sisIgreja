@@ -13322,7 +13322,7 @@
         <entry file="file://$PROJECT_DIR$/public/bundles/easyadmin/login.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -13799,7 +13799,7 @@
       <workItem from="1520709008306" duration="4156000" />
       <workItem from="1520798436459" duration="7617000" />
       <workItem from="1521140174931" duration="685000" />
-      <workItem from="1521203203772" duration="11689000" />
+      <workItem from="1521203203772" duration="11961000" />
     </task>
     <task id="LOCAL-00001" summary="Adicionada entidade igreja">
       <created>1516603492373</created>
@@ -13847,7 +13847,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="653858000" />
+    <option name="totallyTimeSpent" value="654130000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -14316,7 +14316,7 @@
     <entry file="file://$PROJECT_DIR$/public/bundles/easyadmin/login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
           <folding />
         </state>
       </provider>
